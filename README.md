@@ -10,4 +10,4 @@
 ## Some Other Info
 
 - My QQ: 
-- My WeChat: 
+- My WeChat: cycle_index
