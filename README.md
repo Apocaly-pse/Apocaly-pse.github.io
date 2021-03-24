@@ -4,7 +4,7 @@
 
 - Combinatorics
 - LaTeX:TikZ/Beamer/Thesis
-- Python:Keras/TensorFlow
+- Python:TensorFlow
 - Frontend:Html/CSS/JS
 
 ## Some Other Info
