@@ -9,6 +9,7 @@ description: A college student love Python and TeX
 show_info: true
 # google_analytics:
 
-github:
-  csdn_url: http://example.com/download.zip
+info:
+  csdn_url: https://blog.csdn.net/qq_41437512
+  repository_url: http
   # another_url: another value
