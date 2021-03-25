@@ -8,3 +8,7 @@ description: A college student love Python and TeX
 # page_excerpts: true
 show_info: true
 # google_analytics:
+
+github:
+  csdn_url: http://example.com/download.zip
+  # another_url: another value
