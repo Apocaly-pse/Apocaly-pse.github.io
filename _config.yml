@@ -4,6 +4,7 @@ markdown: kramdown
 title: zorchp's Homepage
 description: A college student love Python and TeX
 
-page_excerpts: true
+
+# page_excerpts: true
 # show_downloads: true
 # google_analytics:
