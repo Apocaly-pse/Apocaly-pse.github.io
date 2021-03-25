@@ -214,7 +214,7 @@ header li { list-style-type: none; width: 132px; height: 15px; margin-bottom: 12
 
 header li:hover { background: #C3001D; background: -moz-linear-gradient(top, #C3001D 0%, #950119 100%); background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f8f8f8), color-stop(100%, #dddddd)); background: -webkit-linear-gradient(top, #C3001D 0%, #950119 100%); background: -o-linear-gradient(top, #C3001D 0%, #950119 100%); background: -ms-linear-gradient(top, #C3001D 0%, #950119 100%); background: linear-gradient(to top, #C3001D 0%, #950119 100%); }
 
-a.buttons { -webkit-font-smoothing: antialiased; background: url(../images/csdn.png) no-repeat; font-weight: normal; text-shadow: rgba(0, 0, 0, 0.4) 0 -1px 0; padding: 2px 2px 2px 22px; height: 25px; }
+a.buttons { -webkit-font-smoothing: antialiased; background: url(../images/csdn.png) no-repeat; font-weight: normal; text-shadow: rgba(0, 0, 0, 0.4) 0 -1px 0; padding: 1px 2px 2px 22px; height: 25px; }
 
 a.github { background: url(../images/octocat-small.png) no-repeat 1px; }
 
