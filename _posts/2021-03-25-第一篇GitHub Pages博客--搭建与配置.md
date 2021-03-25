@@ -1,16 +1,11 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2020-10-10 11:29:08 +0800
-categories: jekyll update
+title:  第一篇GitHub Pages博客--搭建与配置
+date:   2021-03-25
+categories: configs
 author: ZorchP
-url: http://localhost:4000
 
 ---
-
-<p>我的第一篇文章</p>
-
-
 
 
 ## My Hobbies
