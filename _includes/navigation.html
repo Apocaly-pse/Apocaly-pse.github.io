@@ -1,0 +1,8 @@
+<!-- 使当前网页高亮显示 -->
+<nav>
+  {% for item in site.data.navigation %}
+    <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>
+      {{ item.name }}
+    </a>
+  {% endfor %}
+</nav>
