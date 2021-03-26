@@ -1,11 +1,7 @@
-## My Hobbies
+# Intro
 
-- Combinatorics
-- LaTeX:TikZ/Beamer/Thesis
-- Python:TensorFlow
-- Frontend:Html/CSS/JS
+This is my Blog powered by _GitHub Pages_.
 
-## Some Other Info
+# More Info
 
-- My QQ: 
-- My WeChat: cycle_index
+I am a college student in CUGB, major in Mathematics and love programming.

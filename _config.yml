@@ -1,14 +1,7 @@
-theme: jekyll-theme-dinky
+baseurl: /
 markdown: kramdown
 
 title: __hep__'s Homepage
-description: A college student
+description: share some useful skills and tips
 
 
-# page_excerpts: true
-show_info: true
-# google_analytics:
-
-info:
-  csdn_url: https://blog.csdn.net/qq_41437512
-  # another_url: another value
