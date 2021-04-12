@@ -1,38 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <!-- 添加CSS路径到当前文件 -->
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <title>Github pages博客  搭建与配置</title>
-
-  <!-- 下面两行用于生成主页标签页以及子网页标签页上面的小图标 -->
-  <link rel="shortcut icon" href="/assets/images/p.ico" type="image/x-icon"/>
-  <link rel="bookmark" href="/assets/images/p.ico"/>
-</head>
-<body>
-  <!-- 设置导航栏 -->
-  <!-- 使当前网页高亮显示 -->
-<nav>
-  
-    <a href="/" >
-      Home
-    </a>
-  
-    <a href="/blog.html" >
-      Blog
-    </a>
-  
-    <a href="/about.html" >
-      About
-    </a>
-  
-</nav>
-
-  <h1>Github pages博客  搭建与配置</h1>
-<p>
-  25 Mar 2021 - zorchp
-</p>
+I"�_<p>@[toc]</p>
 
 <h1 id="写在前面">写在前面</h1>
 
@@ -40,7 +6,9 @@
 
 <p>我主要使用了Jekyll作为渲染静态页面的引擎,本来是想直接拷贝别人做好的,然后自己再进行修改,但是感觉这样还是学不到东西,所以还是自己亲自动手实现一下啦~</p>
 
-<p>本文部分参考了阮一峰老师的博客<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">1</a></sup>以及Jekyll的step-by-step-tutorial文档<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">2</a></sup>,(不得不说Dash是真的不错,校园网时好时坏的情况下还是要靠离线文档挑大梁了).教程部分主要选取了jekyll的官方教程<sup id="fnref:3:1" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">2</a></sup>,教程是英文的,不过写的很详细,想深入学习的话还得看官方文档.</p>
+<blockquote>
+  <p>本文部分参考了阮一峰老师的博客<sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote" rel="footnote">1</a></sup>以及Jekyll的step-by-step-tutorial文档<sup id="fnref:3" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">2</a></sup>,(不得不说Dash是真的不错,校园网时好时坏的情况下还是要靠离线文档挑大梁了).教程部分主要选取了jekyll的官方教程<sup id="fnref:3:1" role="doc-noteref"><a href="#fn:3" class="footnote" rel="footnote">2</a></sup>,教程是英文的,不过写的很详细,想深入学习的话还得看官方文档.</p>
+</blockquote>
 
 <h1 id="前期准备">前期准备</h1>
 
@@ -228,18 +196,10 @@ title: Blog
 <span class="nt">&lt;ul&gt;</span>
     
     <span class="nt">&lt;li&gt;</span> 
-        <span class="nt">&lt;h3&gt;</span>12 Apr 2021
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2021/04/12/css%E5%AD%A6%E4%B9%A0.html"</span><span class="nt">&gt;</span>Css学习<span class="nt">&lt;/a&gt;&lt;/h3&gt;</span>
-        <span class="c">&lt;!-- 默认内容的第一段 --&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"special"</span><span class="nt">&gt;&lt;/div&gt;</span>
-
-    <span class="nt">&lt;/li&gt;</span>
-    
-    <span class="nt">&lt;li&gt;</span> 
         <span class="nt">&lt;h3&gt;</span>26 Mar 2021
         <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2021/03/26/%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84mean-square-error.html"</span><span class="nt">&gt;</span>自己写的mean Square Error<span class="nt">&lt;/a&gt;&lt;/h3&gt;</span>
         <span class="c">&lt;!-- 默认内容的第一段 --&gt;</span>
-        <span class="nt">&lt;h1</span> <span class="na">id=</span><span class="s">"写在前面"</span><span class="nt">&gt;</span>写在前面<span class="nt">&lt;/h1&gt;</span>
+        <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">"写在前面"</span><span class="nt">&gt;</span>写在前面<span class="nt">&lt;/h2&gt;</span>
 
     <span class="nt">&lt;/li&gt;</span>
     
@@ -247,7 +207,7 @@ title: Blog
         <span class="nt">&lt;h3&gt;</span>25 Mar 2021
         <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2021/03/25/GitHub-Pages%E5%8D%9A%E5%AE%A2-%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE.html"</span><span class="nt">&gt;</span>Github pages博客  搭建与配置<span class="nt">&lt;/a&gt;&lt;/h3&gt;</span>
         <span class="c">&lt;!-- 默认内容的第一段 --&gt;</span>
-        <span class="nt">&lt;h1</span> <span class="na">id=</span><span class="s">"写在前面"</span><span class="nt">&gt;</span>写在前面<span class="nt">&lt;/h1&gt;</span>
+        <span class="nt">&lt;p&gt;</span>@[toc]<span class="nt">&lt;/p&gt;</span>
 
     <span class="nt">&lt;/li&gt;</span>
     
@@ -418,9 +378,4 @@ This page tells you a little bit about me.
     </li>
   </ol>
 </div>
-
-
-<!-- 设置返回主页的超链接 -->
-<!-- <a href="/">Zorch's Homepage</a> -->
-</body>
-</html>
+:ET
