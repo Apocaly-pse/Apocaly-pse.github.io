@@ -1,7 +1,7 @@
 @charset "UTF-8";
 .current { color: green; }
 
-body { text-indent: 2em; font-size: 18px; }
+body { font-size: 18px; }
 
 /*使超链接不显示下划线*/
 a { text-decoration: none; }
@@ -9,5 +9,7 @@ a { text-decoration: none; }
 .special { width: 100px; height: 100px; background-color: pink; transition: all .3s; /* 过渡写再本身是 谁做动画写再谁身上  s  ms*/ }
 
 .special:hover { /*background: green no-repeat url();*/ background: green; /*transform: translate(100px, 100px);   只有 x  y 默认为0  transform: scale(1.3);   只有 x  y  默认 等比例缩放  */ transform: translate(100px, 100px) scale(0.3) rotate(45deg); /*顺序有关系 先 移动后缩放*/ }
+
+.markdown-body img { /* 图片居中 */ clear: both; margin: 0 auto; display: block; /* 添加图片阴影 */ box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; o-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; }
 
 /*# sourceMappingURL=styles.css.map */

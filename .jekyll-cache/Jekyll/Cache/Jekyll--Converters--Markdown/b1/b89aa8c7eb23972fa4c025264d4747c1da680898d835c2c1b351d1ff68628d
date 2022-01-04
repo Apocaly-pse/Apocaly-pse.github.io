@@ -1,0 +1,8 @@
+I"w\[\sin x\]
+
+\[\begin{pmatrix}a&amp;b\\ c&amp;d\end{pmatrix}\]
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">aa</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'d'</span><span class="p">)</span>
+</code></pre></div></div>
+:ET

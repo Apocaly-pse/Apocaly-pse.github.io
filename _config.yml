@@ -1,5 +1,10 @@
 baseurl: /
+highlighter: rouge
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
 
 title: Zorch's Homepage
 description: share some useful skills and tips
