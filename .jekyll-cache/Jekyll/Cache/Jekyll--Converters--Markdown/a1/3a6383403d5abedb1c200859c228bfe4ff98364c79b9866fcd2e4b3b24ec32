@@ -1,3 +1,4 @@
+I"ò
 <p>&lt;!doctype html&gt;</p>
 <html>
 <head>
@@ -21,6 +22,7 @@ html,body{
 <body>
 <canvas id="canvas"></canvas><script>
 function initVars(){
+
 	pi=Math.PI;
 	ctx=canvas.getContext("2d");
 	canvas.width=canvas.clientWidth;
@@ -47,16 +49,42 @@ function initVars(){
 	frames = 0;
 }
 
-function rasterizePoint(x,y,z){ var p,d; x-=playerX; y-=playerY; z-=playerZ; p=Math.atan2(x,z); d=Math.sqrt(x*x+z*z);
-x=Math.sin(p-yaw)*d; z=Math.cos(p-yaw)*d; p=Math.atan2(y,z); d=Math.sqrt(y*y+z*z); y=Math.sin(p-pitch)*d; z=Math.cos(
-p-pitch)*d; var rx1=-1000,ry1=1,rx2=1000,ry2=1,rx3=0,ry3=0,rx4=x,ry4=z,uc=(ry4-ry3)*(rx2-rx1)-(rx4-rx3)*(ry2-ry1); if(!
-uc) return {x:0,y:0,d:-1}; var ua=((rx4-rx3)*(ry1-ry3)-(ry4-ry3)*(rx1-rx3))/uc; var ub=((rx2-rx1)*(ry1-ry3)-(ry2-ry1)*(
-rx1-rx3))/uc; if(!z)z=.000000001; if(ua>0&&ua<1&&ub>0&&ub<1){ return { x:cx+(rx1+ua*(rx2-rx1))*scale, y:cy+y/z*scale, d:
-Math.sqrt(x*x+y*y+z*z)
-}; }else{ return { x:cx+(rx1+ua*(rx2-rx1))*scale, y:cy+y/z*scale, d:-1 }; } }
+function rasterizePoint(x,y,z){
+
+	var p,d;
+	x-=playerX;
+	y-=playerY;
+	z-=playerZ;
+	p=Math.atan2(x,z);
+	d=Math.sqrt(x*x+z*z);
+	x=Math.sin(p-yaw)*d;
+	z=Math.cos(p-yaw)*d;
+	p=Math.atan2(y,z);
+	d=Math.sqrt(y*y+z*z);
+	y=Math.sin(p-pitch)*d;
+	z=Math.cos(p-pitch)*d;
+	var rx1=-1000,ry1=1,rx2=1000,ry2=1,rx3=0,ry3=0,rx4=x,ry4=z,uc=(ry4-ry3)*(rx2-rx1)-(rx4-rx3)*(ry2-ry1);
+	if(!uc) return {x:0,y:0,d:-1};
+	var ua=((rx4-rx3)*(ry1-ry3)-(ry4-ry3)*(rx1-rx3))/uc;
+	var ub=((rx2-rx1)*(ry1-ry3)-(ry2-ry1)*(rx1-rx3))/uc;
+	if(!z)z=.000000001;
+	if(ua>0&&ua<1&&ub>0&&ub<1){
+		return {
+			x:cx+(rx1+ua*(rx2-rx1))*scale,
+			y:cy+y/z*scale,
+			d:Math.sqrt(x*x+y*y+z*z)
+		};
+	}else{
+		return {
+			x:cx+(rx1+ua*(rx2-rx1))*scale,
+			y:cy+y/z*scale,
+			d:-1
+		};
+	}
+}
 
 function spawnSeed(){
-
+	
 	seed=new Object();
 	seed.x=-50+Math.random()*100;
 	seed.y=25;
@@ -66,11 +94,10 @@ function spawnSeed(){
 	seed.vz=.1-Math.random()*.2;
 	seed.born=frames;
 	seeds.push(seed);
-
 }
 
 function splode(x,y,z){
-
+	
 	t=5+parseInt(Math.random()*150);
 	sparkV=1+Math.random()*2.5;
 	type=parseInt(Math.random()*3);
@@ -124,11 +151,10 @@ function splode(x,y,z){
 	d=Math.sqrt((x-playerX)*(x-playerX)+(y-playerY)*(y-playerY)+(z-playerZ)*(z-playerZ));
 	pow.volume=1.5/(1+d/10);
 	pow.play();
-
 }
 
 function doLogic(){
-
+	
 	if(seedTimer<frames){
 		seedTimer=frames+seedInterval*Math.random()*10;
 		spawnSeed();
@@ -181,20 +207,18 @@ function doLogic(){
 	playerX=Math.sin(p+t)*d;
 	playerZ=Math.cos(p+t)*d;
 	yaw=pi+p+t;
-
 }
 
 function rgb(col){
-
+	
 	var r = parseInt((.5+Math.sin(col)*.5)*16);
 	var g = parseInt((.5+Math.cos(col)*.5)*16);
 	var b = parseInt((.5-Math.sin(col)*.5)*16);
 	return "#"+r.toString(16)+g.toString(16)+b.toString(16);
-
 }
 
 function draw(){
-
+	
 	ctx.clearRect(0,0,cx*2,cy*2);
 	
 	ctx.fillStyle="#ff8";
@@ -260,7 +284,6 @@ function draw(){
 			ctx.drawImage(sparks[i].img,point.x-size/2,point.y-size/2,size,size);
 		}
 	}
-
 }
 
 function frame(){
@@ -273,15 +296,20 @@ function frame(){
 	draw();
 	doLogic();
 	requestAnimationFrame(frame);
-
 }
 
-window.addEventListener("resize",()=>{ canvas.width=canvas.clientWidth; canvas.height=canvas.clientHeight;
-cx=canvas.width/2; cy=canvas.height/2; });
+window.addEventListener("resize",()=>{
+	canvas.width=canvas.clientWidth;
+	canvas.height=canvas.clientHeight;
+	cx=canvas.width/2;
+	cy=canvas.height/2;
+});
 
-initVars(); frame();</script>
+initVars();
+frame();</script>
 <div style="text-align:center;">
 </div>
 </body>
 </html>
 
+:ET

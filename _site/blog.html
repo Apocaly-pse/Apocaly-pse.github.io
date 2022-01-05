@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <!-- 添加CSS路径到当前文件 -->
   <link rel="stylesheet" href="/assets/css/styles.css">
-  <title>Blog</title>
+  <title>博客列表</title>
 
   <!-- 下面两行用于生成主页标签页以及子网页标签页上面的小图标 -->
   <link rel="shortcut icon" href="/assets/images/p.ico" type="image/x-icon"/>
@@ -46,27 +46,26 @@
   <h1>最新文章</h1>
 
 <!-- 链接到全部博客(for循环遍历) -->
-<ul style="text-indent: 0em;">
+<ul style="text-indent: 0;">
     
     <li> 
         <h3>05 Jan 2022
         <a href="/2022/01/05/%E7%BB%99Jekyll%E7%BD%91%E9%A1%B5%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE.html">给jekyll网页设置代码高亮</a></h3>
         <!-- 显示默认内容的第一行 -->
-        <!-- <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">Uiybivr</span><span class="p">():</span>
+<!--         <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">Uiybivr</span><span class="p">():</span>
     <span class="n">vornvr</span><span class="p">()</span>
 </code></pre></div></div>
- -->
+-->
     </li>
     
     <li> 
         <h3>01 Jan 2022
         <a href="/2022/01/01/%E6%94%BE%E7%83%9F%E8%8A%B1.html">放烟花</a></h3>
         <!-- 显示默认内容的第一行 -->
-        <!-- 
-<!doctype html>
+<!--         <p>&lt;!doctype html&gt;</p>
 <html>
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8" />
 
 <style>
 html,body{
@@ -86,7 +85,6 @@ html,body{
 <body>
 <canvas id="canvas"></canvas><script>
 function initVars(){
-
 	pi=Math.PI;
 	ctx=canvas.getContext("2d");
 	canvas.width=canvas.clientWidth;
@@ -113,42 +111,16 @@ function initVars(){
 	frames = 0;
 }
 
-function rasterizePoint(x,y,z){
-
-	var p,d;
-	x-=playerX;
-	y-=playerY;
-	z-=playerZ;
-	p=Math.atan2(x,z);
-	d=Math.sqrt(x*x+z*z);
-	x=Math.sin(p-yaw)*d;
-	z=Math.cos(p-yaw)*d;
-	p=Math.atan2(y,z);
-	d=Math.sqrt(y*y+z*z);
-	y=Math.sin(p-pitch)*d;
-	z=Math.cos(p-pitch)*d;
-	var rx1=-1000,ry1=1,rx2=1000,ry2=1,rx3=0,ry3=0,rx4=x,ry4=z,uc=(ry4-ry3)*(rx2-rx1)-(rx4-rx3)*(ry2-ry1);
-	if(!uc) return {x:0,y:0,d:-1};
-	var ua=((rx4-rx3)*(ry1-ry3)-(ry4-ry3)*(rx1-rx3))/uc;
-	var ub=((rx2-rx1)*(ry1-ry3)-(ry2-ry1)*(rx1-rx3))/uc;
-	if(!z)z=.000000001;
-	if(ua>0&&ua<1&&ub>0&&ub<1){
-		return {
-			x:cx+(rx1+ua*(rx2-rx1))*scale,
-			y:cy+y/z*scale,
-			d:Math.sqrt(x*x+y*y+z*z)
-		};
-	}else{
-		return {
-			x:cx+(rx1+ua*(rx2-rx1))*scale,
-			y:cy+y/z*scale,
-			d:-1
-		};
-	}
-}
+function rasterizePoint(x,y,z){ var p,d; x-=playerX; y-=playerY; z-=playerZ; p=Math.atan2(x,z); d=Math.sqrt(x*x+z*z);
+x=Math.sin(p-yaw)*d; z=Math.cos(p-yaw)*d; p=Math.atan2(y,z); d=Math.sqrt(y*y+z*z); y=Math.sin(p-pitch)*d; z=Math.cos(
+p-pitch)*d; var rx1=-1000,ry1=1,rx2=1000,ry2=1,rx3=0,ry3=0,rx4=x,ry4=z,uc=(ry4-ry3)*(rx2-rx1)-(rx4-rx3)*(ry2-ry1); if(!
+uc) return {x:0,y:0,d:-1}; var ua=((rx4-rx3)*(ry1-ry3)-(ry4-ry3)*(rx1-rx3))/uc; var ub=((rx2-rx1)*(ry1-ry3)-(ry2-ry1)*(
+rx1-rx3))/uc; if(!z)z=.000000001; if(ua>0&&ua<1&&ub>0&&ub<1){ return { x:cx+(rx1+ua*(rx2-rx1))*scale, y:cy+y/z*scale, d:
+Math.sqrt(x*x+y*y+z*z)
+}; }else{ return { x:cx+(rx1+ua*(rx2-rx1))*scale, y:cy+y/z*scale, d:-1 }; } }
 
 function spawnSeed(){
-	
+
 	seed=new Object();
 	seed.x=-50+Math.random()*100;
 	seed.y=25;
@@ -158,10 +130,11 @@ function spawnSeed(){
 	seed.vz=.1-Math.random()*.2;
 	seed.born=frames;
 	seeds.push(seed);
+
 }
 
 function splode(x,y,z){
-	
+
 	t=5+parseInt(Math.random()*150);
 	sparkV=1+Math.random()*2.5;
 	type=parseInt(Math.random()*3);
@@ -215,10 +188,11 @@ function splode(x,y,z){
 	d=Math.sqrt((x-playerX)*(x-playerX)+(y-playerY)*(y-playerY)+(z-playerZ)*(z-playerZ));
 	pow.volume=1.5/(1+d/10);
 	pow.play();
+
 }
 
 function doLogic(){
-	
+
 	if(seedTimer<frames){
 		seedTimer=frames+seedInterval*Math.random()*10;
 		spawnSeed();
@@ -271,18 +245,20 @@ function doLogic(){
 	playerX=Math.sin(p+t)*d;
 	playerZ=Math.cos(p+t)*d;
 	yaw=pi+p+t;
+
 }
 
 function rgb(col){
-	
+
 	var r = parseInt((.5+Math.sin(col)*.5)*16);
 	var g = parseInt((.5+Math.cos(col)*.5)*16);
 	var b = parseInt((.5-Math.sin(col)*.5)*16);
 	return "#"+r.toString(16)+g.toString(16)+b.toString(16);
+
 }
 
 function draw(){
-	
+
 	ctx.clearRect(0,0,cx*2,cy*2);
 	
 	ctx.fillStyle="#ff8";
@@ -348,6 +324,7 @@ function draw(){
 			ctx.drawImage(sparks[i].img,point.x-size/2,point.y-size/2,size,size);
 		}
 	}
+
 }
 
 function frame(){
@@ -360,56 +337,52 @@ function frame(){
 	draw();
 	doLogic();
 	requestAnimationFrame(frame);
+
 }
 
-window.addEventListener("resize",()=>{
-	canvas.width=canvas.clientWidth;
-	canvas.height=canvas.clientHeight;
-	cx=canvas.width/2;
-	cy=canvas.height/2;
-});
+window.addEventListener("resize",()=>{ canvas.width=canvas.clientWidth; canvas.height=canvas.clientHeight;
+cx=canvas.width/2; cy=canvas.height/2; });
 
-initVars();
-frame();</script>
+initVars(); frame();</script>
 <div style="text-align:center;">
 </div>
 </body>
 </html>
 
- -->
+-->
     </li>
     
     <li> 
         <h3>02 Jul 2021
         <a href="/2021/07/02/%E4%BD%BF%E7%94%A8TikZ%E7%BB%98%E5%88%B6%E5%85%9A%E5%BE%BD.html">使用tikz绘制党徽</a></h3>
         <!-- 显示默认内容的第一行 -->
-        <!-- <h1 id="前言">前言</h1>
+<!--         <h1 id="前言">前言</h1>
 <p>党的一百周年生日之际, 用TikZ绘图命令作出党徽设计图, 献礼党的生日~</p>
- -->
+-->
     </li>
     
     <li> 
         <h3>12 Apr 2021
         <a href="/2021/04/12/css%E5%AD%A6%E4%B9%A0.html">Css学习</a></h3>
         <!-- 显示默认内容的第一行 -->
-        <!-- <div class="special"></div>
- -->
+<!--         <div class="special"></div>
+-->
     </li>
     
     <li> 
         <h3>26 Mar 2021
         <a href="/2021/03/26/%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84mean-square-error.html">自己写的mean Square Error</a></h3>
         <!-- 显示默认内容的第一行 -->
-        <!-- <h1 id="写在前面">写在前面</h1>
- -->
+<!--         <h1 id="写在前面">写在前面</h1>
+-->
     </li>
     
     <li> 
         <h3>25 Mar 2021
         <a href="/2021/03/25/GitHub-Pages%E5%8D%9A%E5%AE%A2-%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE.html">Github pages博客  搭建与配置</a></h3>
         <!-- 显示默认内容的第一行 -->
-        <!-- <h1 id="写在前面">写在前面</h1>
- -->
+<!--         <h1 id="写在前面">写在前面</h1>
+-->
     </li>
     
 </ul>

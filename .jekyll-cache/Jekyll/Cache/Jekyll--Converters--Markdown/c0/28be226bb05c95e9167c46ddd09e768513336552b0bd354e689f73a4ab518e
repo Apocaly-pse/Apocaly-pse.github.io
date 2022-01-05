@@ -1,54 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <!-- 添加CSS路径到当前文件 -->
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <title>Github pages博客  搭建与配置</title>
-
-  <!-- 下面两行用于生成主页标签页以及子网页标签页上面的小图标 -->
-  <link rel="shortcut icon" href="/assets/images/p.ico" type="image/x-icon"/>
-  <link rel="bookmark" href="/assets/images/p.ico"/>
-<!--  渲染数学公式-->
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      inlineMath: [['$','$']]
-    }
-  });
-</script>
-<!--  代码高亮-->
-  <link href='/assets/css/syntax_monokai.css' rel='stylesheet' type='text/css' />
-
-
-</head>
-<body>
-  <!-- 设置导航栏 -->
-  <!-- 使当前网页高亮显示 -->
-<nav>
-  
-    <a href="/" >
-      Home
-    </a>
-  
-    <a href="/blog.html" >
-      Blog
-    </a>
-  
-    <a href="/about.html" >
-      About
-    </a>
-  
-</nav>
-
-  <h1>Github pages博客  搭建与配置</h1>
-<p>
-  25 Mar 2021 - zorchp
-</p>
-
-<h1 id="写在前面">写在前面</h1>
+I"z�<h1 id="写在前面">写在前面</h1>
 
 <p>最近想尝试一下GitHub提供的GitHub Pages功能,通过GitHub强大的服务器支持,可以免费搭建自己的个人站点(个人博客),看了很多博客和教程,特别是Jekyll的官方文档,终于摸索出来一套属于Mac的个人站点搭建方法.</p>
 
@@ -743,9 +693,4 @@ This page tells you a little bit about me.
     </li>
   </ol>
 </div>
-
-
-<!-- 设置返回主页的超链接 -->
-<!-- <a href="/">Zorch's Homepage</a> -->
-</body>
-</html>
+:ET

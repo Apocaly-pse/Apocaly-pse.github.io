@@ -1,54 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <!-- 添加CSS路径到当前文件 -->
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <title>Github pages博客  搭建与配置</title>
-
-  <!-- 下面两行用于生成主页标签页以及子网页标签页上面的小图标 -->
-  <link rel="shortcut icon" href="/assets/images/p.ico" type="image/x-icon"/>
-  <link rel="bookmark" href="/assets/images/p.ico"/>
-<!--  渲染数学公式-->
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      inlineMath: [['$','$']]
-    }
-  });
-</script>
-<!--  代码高亮-->
-  <link href='/assets/css/syntax_monokai.css' rel='stylesheet' type='text/css' />
-
-
-</head>
-<body>
-  <!-- 设置导航栏 -->
-  <!-- 使当前网页高亮显示 -->
-<nav>
-  
-    <a href="/" >
-      Home
-    </a>
-  
-    <a href="/blog.html" >
-      Blog
-    </a>
-  
-    <a href="/about.html" >
-      About
-    </a>
-  
-</nav>
-
-  <h1>Github pages博客  搭建与配置</h1>
-<p>
-  25 Mar 2021 - zorchp
-</p>
-
-<h1 id="写在前面">写在前面</h1>
+I"�x<h1 id="写在前面">写在前面</h1>
 
 <p>最近想尝试一下GitHub提供的GitHub Pages功能,通过GitHub强大的服务器支持,可以免费搭建自己的个人站点(个人博客),看了很多博客和教程,特别是Jekyll的官方文档,终于摸索出来一套属于Mac的个人站点搭建方法.</p>
 
@@ -231,36 +181,14 @@ Zorch's Homepage
 
 <p>有了主页还不够,还需要加上能够显示所有博客的一个列表,在站点根目录下新建一个<code class="language-plaintext highlighter-rouge">blog.html</code>文件,输入以下内容:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
-layout: default
-title: Blog
----
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span class="n"&gt;vornvr&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt; )
+</code></pre></div></div>
 
-<span class="nt">&lt;h1&gt;</span>最新文章<span class="nt">&lt;/h1&gt;</span>
+<html>
+<head>
+<meta charset="utf-8" />
 
-<span class="c">&lt;!-- 链接到全部博客(for循环遍历) --&gt;</span>
-<span class="nt">&lt;ul&gt;</span>
-    
-    <span class="nt">&lt;li&gt;</span> 
-        <span class="nt">&lt;h3&gt;</span>05 Jan 2022
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2022/01/05/%E7%BB%99Jekyll%E7%BD%91%E9%A1%B5%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE.html"</span><span class="nt">&gt;</span>给jekyll网页设置代码高亮<span class="nt">&lt;/a&gt;&lt;/h3&gt;</span>
-        <span class="c">&lt;!-- 默认内容的第一段 --&gt;</span>
-<span class="c">&lt;!--        &lt;div class="language-python highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;Uiybivr&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-    &lt;span class="n"&gt;vornvr&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
---&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    
-    <span class="nt">&lt;li&gt;</span> 
-        <span class="nt">&lt;h3&gt;</span>01 Jan 2022
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2022/01/01/%E6%94%BE%E7%83%9F%E8%8A%B1.html"</span><span class="nt">&gt;</span>放烟花<span class="nt">&lt;/a&gt;&lt;/h3&gt;</span>
-        <span class="c">&lt;!-- 默认内容的第一段 --&gt;</span>
-<span class="c">&lt;!--        &lt;p&gt;&amp;lt;!doctype html&amp;gt;&lt;/p&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;meta charset="utf-8" /&gt;
-
-&lt;style&gt;
+<style>
 html,body{
 	margin:0px;
 	width:100%;
@@ -273,10 +201,10 @@ html,body{
 	width:100%;
 	height:100%;
 }
-&lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;canvas id="canvas"&gt;&lt;/canvas&gt;&lt;script&gt;
+</style>
+</head>
+<body>
+<canvas id="canvas"></canvas><script>
 function initVars(){
 	pi=Math.PI;
 	ctx=canvas.getContext("2d");
@@ -291,7 +219,7 @@ function initVars(){
 	seeds=new Array();
 	sparkPics=new Array();
 	s="https://cantelope.org/NYE/";
-	for(i=1;i&lt;=10;++i){
+	for(i=1;i<=10;++i){
 		sparkPic=new Image();
 		sparkPic.src=s+"spark"+i+".png";
 		sparkPics.push(sparkPic);
@@ -308,7 +236,7 @@ function rasterizePoint(x,y,z){ var p,d; x-=playerX; y-=playerY; z-=playerZ; p=M
 x=Math.sin(p-yaw)*d; z=Math.cos(p-yaw)*d; p=Math.atan2(y,z); d=Math.sqrt(y*y+z*z); y=Math.sin(p-pitch)*d; z=Math.cos(
 p-pitch)*d; var rx1=-1000,ry1=1,rx2=1000,ry2=1,rx3=0,ry3=0,rx4=x,ry4=z,uc=(ry4-ry3)*(rx2-rx1)-(rx4-rx3)*(ry2-ry1); if(!
 uc) return {x:0,y:0,d:-1}; var ua=((rx4-rx3)*(ry1-ry3)-(ry4-ry3)*(rx1-rx3))/uc; var ub=((rx2-rx1)*(ry1-ry3)-(ry2-ry1)*(
-rx1-rx3))/uc; if(!z)z=.000000001; if(ua&gt;0&amp;&amp;ua&lt;1&amp;&amp;ub&gt;0&amp;&amp;ub&lt;1){ return { x:cx+(rx1+ua*(rx2-rx1))*scale, y:cy+y/z*scale, d:
+rx1-rx3))/uc; if(!z)z=.000000001; if(ua>0&&ua<1&&ub>0&&ub<1){ return { x:cx+(rx1+ua*(rx2-rx1))*scale, y:cy+y/z*scale, d:
 Math.sqrt(x*x+y*y+z*z)
 }; }else{ return { x:cx+(rx1+ua*(rx2-rx1))*scale, y:cy+y/z*scale, d:-1 }; } }
 
@@ -345,7 +273,7 @@ function splode(x,y,z){
 			do{ pic3=parseInt(Math.random()*10); }while(pic3==pic1 || pic3==pic2);
 			break;
 	}
-	for(m=1;m&lt;t;++m){
+	for(m=1;m<t;++m){
 		spark=new Object();
 		spark.x=x; spark.y=y; spark.z=z;
 		p1=pi*2*Math.random();
@@ -386,22 +314,22 @@ function splode(x,y,z){
 
 function doLogic(){
 
-	if(seedTimer&lt;frames){
+	if(seedTimer<frames){
 		seedTimer=frames+seedInterval*Math.random()*10;
 		spawnSeed();
 	}
-	for(i=0;i&lt;seeds.length;++i){
+	for(i=0;i<seeds.length;++i){
 		seeds[i].vy+=gravity;
 		seeds[i].x+=seeds[i].vx;
 		seeds[i].y+=seeds[i].vy;
 		seeds[i].z+=seeds[i].vz;
-		if(frames-seeds[i].born&gt;seedLife){
+		if(frames-seeds[i].born>seedLife){
 			splode(seeds[i].x,seeds[i].y,seeds[i].z);
 			seeds.splice(i,1);
 		}
 	}
-	for(i=0;i&lt;sparks.length;++i){
-		if(sparks[i].alpha&gt;0 &amp;&amp; sparks[i].radius&gt;5){
+	for(i=0;i<sparks.length;++i){
+		if(sparks[i].alpha>0 && sparks[i].radius>5){
 			sparks[i].alpha-=.01;
 			sparks[i].radius/=1.02;
 			sparks[i].vy+=gravity;
@@ -414,13 +342,13 @@ function doLogic(){
 				y=sparks[i].trail[sparks[i].trail.length-1].y;
 				z=sparks[i].trail[sparks[i].trail.length-1].z;
 				d=((point.x-x)*(point.x-x)+(point.y-y)*(point.y-y)+(point.z-z)*(point.z-z));
-				if(d&gt;9){
+				if(d>9){
 					sparks[i].trail.push(point);
 				}
 			}else{
 				sparks[i].trail.push(point);
 			}
-			if(sparks[i].trail.length&gt;5)sparks[i].trail.splice(0,1);				
+			if(sparks[i].trail.length>5)sparks[i].trail.splice(0,1);				
 			sparks[i].x+=sparks[i].vx;
 			sparks[i].y+=sparks[i].vy;
 			sparks[i].z+=sparks[i].vz;
@@ -455,15 +383,15 @@ function draw(){
 	ctx.clearRect(0,0,cx*2,cy*2);
 	
 	ctx.fillStyle="#ff8";
-	for(i=-100;i&lt;100;i+=3){
-		for(j=-100;j&lt;100;j+=4){
+	for(i=-100;i<100;i+=3){
+		for(j=-100;j<100;j+=4){
 			x=i;z=j;y=25;
 			point=rasterizePoint(x,y,z);
 			if(point.d!=-1){
 				size=250/(1+point.d);
 				d = Math.sqrt(x * x + z * z);
 				a = 0.75 - Math.pow(d / 100, 6) * 0.75;
-				if(a&gt;0){
+				if(a>0){
 					ctx.globalAlpha = a;
 					ctx.fillRect(point.x-size/2,point.y-size/2,size,size);				
 				}
@@ -471,7 +399,7 @@ function draw(){
 		}
 	}
 	ctx.globalAlpha=1;
-	for(i=0;i&lt;seeds.length;++i){
+	for(i=0;i<seeds.length;++i){
 		point=rasterizePoint(seeds[i].x,seeds[i].y,seeds[i].z);
 		if(point.d!=-1){
 			size=200/(1+point.d);
@@ -479,11 +407,11 @@ function draw(){
 		}
 	}
 	point1=new Object();
-	for(i=0;i&lt;sparks.length;++i){
+	for(i=0;i<sparks.length;++i){
 		point=rasterizePoint(sparks[i].x,sparks[i].y,sparks[i].z);
 		if(point.d!=-1){
 			size=sparks[i].radius*200/(1+point.d);
-			if(sparks[i].alpha&lt;0)sparks[i].alpha=0;
+			if(sparks[i].alpha<0)sparks[i].alpha=0;
 			if(sparks[i].trail.length){
 				point1.x=point.x;
 				point1.y=point.y;
@@ -499,7 +427,7 @@ function draw(){
 					case sparkPics[8]:ctx.strokeStyle="#fff";break;
 					case sparkPics[9]:ctx.strokeStyle="#44f";break;
 				}
-				for(j=sparks[i].trail.length-1;j&gt;=0;--j){
+				for(j=sparks[i].trail.length-1;j>=0;--j){
 					point2=rasterizePoint(sparks[i].trail[j].x,sparks[i].trail[j].y,sparks[i].trail[j].z);
 					if(point2.d!=-1){
 						ctx.globalAlpha=j/sparks[i].trail.length*sparks[i].alpha/2;
@@ -522,7 +450,7 @@ function draw(){
 
 function frame(){
 
-	if(frames&gt;100000){
+	if(frames>100000){
 		seedTimer=0;
 		frames=0;
 	}
@@ -533,53 +461,25 @@ function frame(){
 
 }
 
-window.addEventListener("resize",()=&gt;{ canvas.width=canvas.clientWidth; canvas.height=canvas.clientHeight;
+window.addEventListener("resize",()=>{ canvas.width=canvas.clientWidth; canvas.height=canvas.clientHeight;
 cx=canvas.width/2; cy=canvas.height/2; });
 
-initVars(); frame();&lt;/script&gt;
-&lt;div style="text-align:center;"&gt;
-&lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+initVars(); frame();</script>
+<div style="text-align:center;">
+</div>
+</body>
+</html>
 
---&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    
-    <span class="nt">&lt;li&gt;</span> 
-        <span class="nt">&lt;h3&gt;</span>02 Jul 2021
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2021/07/02/%E4%BD%BF%E7%94%A8TikZ%E7%BB%98%E5%88%B6%E5%85%9A%E5%BE%BD.html"</span><span class="nt">&gt;</span>使用tikz绘制党徽<span class="nt">&lt;/a&gt;&lt;/h3&gt;</span>
-        <span class="c">&lt;!-- 默认内容的第一段 --&gt;</span>
-<span class="c">&lt;!--        &lt;h1 id="前言"&gt;前言&lt;/h1&gt;
-&lt;p&gt;党的一百周年生日之际, 用TikZ绘图命令作出党徽设计图, 献礼党的生日~&lt;/p&gt;
---&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    
-    <span class="nt">&lt;li&gt;</span> 
-        <span class="nt">&lt;h3&gt;</span>12 Apr 2021
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2021/04/12/css%E5%AD%A6%E4%B9%A0.html"</span><span class="nt">&gt;</span>Css学习<span class="nt">&lt;/a&gt;&lt;/h3&gt;</span>
-        <span class="c">&lt;!-- 默认内容的第一段 --&gt;</span>
-<span class="c">&lt;!--        &lt;div class="special"&gt;&lt;/div&gt;
---&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    
-    <span class="nt">&lt;li&gt;</span> 
-        <span class="nt">&lt;h3&gt;</span>26 Mar 2021
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2021/03/26/%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84mean-square-error.html"</span><span class="nt">&gt;</span>自己写的mean Square Error<span class="nt">&lt;/a&gt;&lt;/h3&gt;</span>
-        <span class="c">&lt;!-- 默认内容的第一段 --&gt;</span>
-<span class="c">&lt;!--        &lt;h1 id="写在前面"&gt;写在前面&lt;/h1&gt;
---&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    
-    <span class="nt">&lt;li&gt;</span> 
-        <span class="nt">&lt;h3&gt;</span>25 Mar 2021
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2021/03/25/GitHub-Pages%E5%8D%9A%E5%AE%A2-%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE.html"</span><span class="nt">&gt;</span>Github pages博客  搭建与配置<span class="nt">&lt;/a&gt;&lt;/h3&gt;</span>
-        <span class="c">&lt;!-- 默认内容的第一段 --&gt;</span>
-<span class="c">&lt;!--        &lt;h1 id="写在前面"&gt;写在前面&lt;/h1&gt;
---&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    
-<span class="nt">&lt;/ul&gt;</span>
-</code></pre></div></div>
+<p>)</p>
+
+<p>党的一百周年生日之际, 用TikZ绘图命令作出党徽设计图, 献礼党的生日~</p>
+<p>)</p>
+
+<p>)</p>
+
+<p>)</p>
+
+<p>)</p>
 
 <p>这里使用Liquid的for循环遍历_posts目录下的所有文章并输出标题及文章的默认第一段(相当于预览).</p>
 
@@ -720,9 +620,11 @@ This page tells you a little bit about me.
 
 <p><code class="language-plaintext highlighter-rouge">cd</code>到当前目录(即<code class="language-plaintext highlighter-rouge">&lt;username&gt;.github.io</code>),可以采用<code class="language-plaintext highlighter-rouge">jekyll build</code>构建静态网页或者<code class="language-plaintext highlighter-rouge">jekyll server</code>启动服务,这里还是建议直接用<code class="language-plaintext highlighter-rouge">server</code>,开启服务,然后就可以在浏览器输入<code class="language-plaintext highlighter-rouge">http://localhost:4000</code>进入你的静态网页了.</p>
 
-<p>使用<code class="language-plaintext highlighter-rouge">control+C</code>即可关闭服务,在Jekyll的官方文档中提到: <strong>如果修改了config.yml配置或其他yml文件的配置</strong>,那就需要<code class="language-plaintext highlighter-rouge">control+C</code>中止服务并重启服务来刷新配置.</p>
+<p>使用control+C即可关闭服务,在Jekyll的官方文档中提到: <strong>如果修改了config.yml配置或其他yml文件的配置</strong>,那就需要control+C中止服务并重启服务来刷新配置.</p>
 
 <h1 id="最后成果与小结">最后成果与小结</h1>
+
+<p>—图片图片图片图片</p>
 
 <p>还是单调了点,之后慢慢学前端的知识再丰富自己的网站吧.</p>
 
@@ -743,9 +645,4 @@ This page tells you a little bit about me.
     </li>
   </ol>
 </div>
-
-
-<!-- 设置返回主页的超链接 -->
-<!-- <a href="/">Zorch's Homepage</a> -->
-</body>
-</html>
+:ET

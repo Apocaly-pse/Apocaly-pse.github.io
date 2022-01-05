@@ -1,54 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <!-- 添加CSS路径到当前文件 -->
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <title>Github pages博客  搭建与配置</title>
-
-  <!-- 下面两行用于生成主页标签页以及子网页标签页上面的小图标 -->
-  <link rel="shortcut icon" href="/assets/images/p.ico" type="image/x-icon"/>
-  <link rel="bookmark" href="/assets/images/p.ico"/>
-<!--  渲染数学公式-->
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      inlineMath: [['$','$']]
-    }
-  });
-</script>
-<!--  代码高亮-->
-  <link href='/assets/css/syntax_monokai.css' rel='stylesheet' type='text/css' />
-
-
-</head>
-<body>
-  <!-- 设置导航栏 -->
-  <!-- 使当前网页高亮显示 -->
-<nav>
-  
-    <a href="/" >
-      Home
-    </a>
-  
-    <a href="/blog.html" >
-      Blog
-    </a>
-  
-    <a href="/about.html" >
-      About
-    </a>
-  
-</nav>
-
-  <h1>Github pages博客  搭建与配置</h1>
-<p>
-  25 Mar 2021 - zorchp
-</p>
-
-<h1 id="写在前面">写在前面</h1>
+I"c�<h1 id="写在前面">写在前面</h1>
 
 <p>最近想尝试一下GitHub提供的GitHub Pages功能,通过GitHub强大的服务器支持,可以免费搭建自己的个人站点(个人博客),看了很多博客和教程,特别是Jekyll的官方文档,终于摸索出来一套属于Mac的个人站点搭建方法.</p>
 
@@ -236,26 +186,26 @@ layout: default
 title: Blog
 ---
 
-<span class="nt">&lt;h1&gt;</span>最新文章<span class="nt">&lt;/h1&gt;</span>
+<span class="c">&lt;!--&lt;h1&gt;最新文章&lt;/h1&gt;--&gt;</span>
 
-<span class="c">&lt;!-- 链接到全部博客(for循环遍历) --&gt;</span>
-<span class="nt">&lt;ul&gt;</span>
-    
-    <span class="nt">&lt;li&gt;</span> 
-        <span class="nt">&lt;h3&gt;</span>05 Jan 2022
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2022/01/05/%E7%BB%99Jekyll%E7%BD%91%E9%A1%B5%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE.html"</span><span class="nt">&gt;</span>给jekyll网页设置代码高亮<span class="nt">&lt;/a&gt;&lt;/h3&gt;</span>
-        <span class="c">&lt;!-- 默认内容的第一段 --&gt;</span>
-<span class="c">&lt;!--        &lt;div class="language-python highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;Uiybivr&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+<span class="c">&lt;!--&amp;lt;!&amp;ndash; 链接到全部博客(for循环遍历) &amp;ndash;&amp;gt;--&gt;</span>
+<span class="c">&lt;!--&lt;ul&gt;--&gt;</span>
+<span class="c">&lt;!--    --&gt;</span>
+<span class="c">&lt;!--    &lt;li&gt; --&gt;</span>
+<span class="c">&lt;!--        &lt;h3&gt;05 Jan 2022--&gt;</span>
+<span class="c">&lt;!--        &lt;a href="/2022/01/05/%E7%BB%99Jekyll%E7%BD%91%E9%A1%B5%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE.html"&gt;给jekyll网页设置代码高亮&lt;/a&gt;&lt;/h3&gt;--&gt;</span>
+<span class="c">&lt;!--        &amp;lt;!&amp;ndash; 默认内容的第一段 &amp;ndash;&amp;gt;--&gt;</span>
+<span class="c">&lt;!--&amp;lt;!&amp;ndash;        &lt;div class="language-python highlighter-rouge"&gt;&lt;div class="highlight"&gt;&lt;pre class="highlight"&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;Uiybivr&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
     &lt;span class="n"&gt;vornvr&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
---&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    
-    <span class="nt">&lt;li&gt;</span> 
-        <span class="nt">&lt;h3&gt;</span>01 Jan 2022
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2022/01/01/%E6%94%BE%E7%83%9F%E8%8A%B1.html"</span><span class="nt">&gt;</span>放烟花<span class="nt">&lt;/a&gt;&lt;/h3&gt;</span>
-        <span class="c">&lt;!-- 默认内容的第一段 --&gt;</span>
-<span class="c">&lt;!--        &lt;p&gt;&amp;lt;!doctype html&amp;gt;&lt;/p&gt;
+&amp;ndash;&amp;gt;--&gt;</span>
+<span class="c">&lt;!--    &lt;/li&gt;--&gt;</span>
+<span class="c">&lt;!--    --&gt;</span>
+<span class="c">&lt;!--    &lt;li&gt; --&gt;</span>
+<span class="c">&lt;!--        &lt;h3&gt;01 Jan 2022--&gt;</span>
+<span class="c">&lt;!--        &lt;a href="/2022/01/01/%E6%94%BE%E7%83%9F%E8%8A%B1.html"&gt;放烟花&lt;/a&gt;&lt;/h3&gt;--&gt;</span>
+<span class="c">&lt;!--        &amp;lt;!&amp;ndash; 默认内容的第一段 &amp;ndash;&amp;gt;--&gt;</span>
+<span class="c">&lt;!--&amp;lt;!&amp;ndash;        &lt;p&gt;&amp;lt;!doctype html&amp;gt;&lt;/p&gt;
 &lt;html&gt;
 &lt;head&gt;
 &lt;meta charset="utf-8" /&gt;
@@ -542,43 +492,43 @@ initVars(); frame();&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 
---&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    
-    <span class="nt">&lt;li&gt;</span> 
-        <span class="nt">&lt;h3&gt;</span>02 Jul 2021
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2021/07/02/%E4%BD%BF%E7%94%A8TikZ%E7%BB%98%E5%88%B6%E5%85%9A%E5%BE%BD.html"</span><span class="nt">&gt;</span>使用tikz绘制党徽<span class="nt">&lt;/a&gt;&lt;/h3&gt;</span>
-        <span class="c">&lt;!-- 默认内容的第一段 --&gt;</span>
-<span class="c">&lt;!--        &lt;h1 id="前言"&gt;前言&lt;/h1&gt;
+&amp;ndash;&amp;gt;--&gt;</span>
+<span class="c">&lt;!--    &lt;/li&gt;--&gt;</span>
+<span class="c">&lt;!--    --&gt;</span>
+<span class="c">&lt;!--    &lt;li&gt; --&gt;</span>
+<span class="c">&lt;!--        &lt;h3&gt;02 Jul 2021--&gt;</span>
+<span class="c">&lt;!--        &lt;a href="/2021/07/02/%E4%BD%BF%E7%94%A8TikZ%E7%BB%98%E5%88%B6%E5%85%9A%E5%BE%BD.html"&gt;使用tikz绘制党徽&lt;/a&gt;&lt;/h3&gt;--&gt;</span>
+<span class="c">&lt;!--        &amp;lt;!&amp;ndash; 默认内容的第一段 &amp;ndash;&amp;gt;--&gt;</span>
+<span class="c">&lt;!--&amp;lt;!&amp;ndash;        &lt;h1 id="前言"&gt;前言&lt;/h1&gt;
 &lt;p&gt;党的一百周年生日之际, 用TikZ绘图命令作出党徽设计图, 献礼党的生日~&lt;/p&gt;
---&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    
-    <span class="nt">&lt;li&gt;</span> 
-        <span class="nt">&lt;h3&gt;</span>12 Apr 2021
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2021/04/12/css%E5%AD%A6%E4%B9%A0.html"</span><span class="nt">&gt;</span>Css学习<span class="nt">&lt;/a&gt;&lt;/h3&gt;</span>
-        <span class="c">&lt;!-- 默认内容的第一段 --&gt;</span>
-<span class="c">&lt;!--        &lt;div class="special"&gt;&lt;/div&gt;
---&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    
-    <span class="nt">&lt;li&gt;</span> 
-        <span class="nt">&lt;h3&gt;</span>26 Mar 2021
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2021/03/26/%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84mean-square-error.html"</span><span class="nt">&gt;</span>自己写的mean Square Error<span class="nt">&lt;/a&gt;&lt;/h3&gt;</span>
-        <span class="c">&lt;!-- 默认内容的第一段 --&gt;</span>
-<span class="c">&lt;!--        &lt;h1 id="写在前面"&gt;写在前面&lt;/h1&gt;
---&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    
-    <span class="nt">&lt;li&gt;</span> 
-        <span class="nt">&lt;h3&gt;</span>25 Mar 2021
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/2021/03/25/GitHub-Pages%E5%8D%9A%E5%AE%A2-%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE.html"</span><span class="nt">&gt;</span>Github pages博客  搭建与配置<span class="nt">&lt;/a&gt;&lt;/h3&gt;</span>
-        <span class="c">&lt;!-- 默认内容的第一段 --&gt;</span>
-<span class="c">&lt;!--        &lt;h1 id="写在前面"&gt;写在前面&lt;/h1&gt;
---&gt;</span>
-    <span class="nt">&lt;/li&gt;</span>
-    
-<span class="nt">&lt;/ul&gt;</span>
+&amp;ndash;&amp;gt;--&gt;</span>
+<span class="c">&lt;!--    &lt;/li&gt;--&gt;</span>
+<span class="c">&lt;!--    --&gt;</span>
+<span class="c">&lt;!--    &lt;li&gt; --&gt;</span>
+<span class="c">&lt;!--        &lt;h3&gt;12 Apr 2021--&gt;</span>
+<span class="c">&lt;!--        &lt;a href="/2021/04/12/css%E5%AD%A6%E4%B9%A0.html"&gt;Css学习&lt;/a&gt;&lt;/h3&gt;--&gt;</span>
+<span class="c">&lt;!--        &amp;lt;!&amp;ndash; 默认内容的第一段 &amp;ndash;&amp;gt;--&gt;</span>
+<span class="c">&lt;!--&amp;lt;!&amp;ndash;        &lt;div class="special"&gt;&lt;/div&gt;
+&amp;ndash;&amp;gt;--&gt;</span>
+<span class="c">&lt;!--    &lt;/li&gt;--&gt;</span>
+<span class="c">&lt;!--    --&gt;</span>
+<span class="c">&lt;!--    &lt;li&gt; --&gt;</span>
+<span class="c">&lt;!--        &lt;h3&gt;26 Mar 2021--&gt;</span>
+<span class="c">&lt;!--        &lt;a href="/2021/03/26/%E8%87%AA%E5%B7%B1%E5%86%99%E7%9A%84mean-square-error.html"&gt;自己写的mean Square Error&lt;/a&gt;&lt;/h3&gt;--&gt;</span>
+<span class="c">&lt;!--        &amp;lt;!&amp;ndash; 默认内容的第一段 &amp;ndash;&amp;gt;--&gt;</span>
+<span class="c">&lt;!--&amp;lt;!&amp;ndash;        &lt;h1 id="写在前面"&gt;写在前面&lt;/h1&gt;
+&amp;ndash;&amp;gt;--&gt;</span>
+<span class="c">&lt;!--    &lt;/li&gt;--&gt;</span>
+<span class="c">&lt;!--    --&gt;</span>
+<span class="c">&lt;!--    &lt;li&gt; --&gt;</span>
+<span class="c">&lt;!--        &lt;h3&gt;25 Mar 2021--&gt;</span>
+<span class="c">&lt;!--        &lt;a href="/2021/03/25/GitHub-Pages%E5%8D%9A%E5%AE%A2-%E6%90%AD%E5%BB%BA%E4%B8%8E%E9%85%8D%E7%BD%AE.html"&gt;Github pages博客  搭建与配置&lt;/a&gt;&lt;/h3&gt;--&gt;</span>
+<span class="c">&lt;!--        &amp;lt;!&amp;ndash; 默认内容的第一段 &amp;ndash;&amp;gt;--&gt;</span>
+<span class="c">&lt;!--&amp;lt;!&amp;ndash;        &lt;h1 id="写在前面"&gt;写在前面&lt;/h1&gt;
+&amp;ndash;&amp;gt;--&gt;</span>
+<span class="c">&lt;!--    &lt;/li&gt;--&gt;</span>
+<span class="c">&lt;!--    --&gt;</span>
+<span class="c">&lt;!--&lt;/ul&gt;--&gt;</span>
 </code></pre></div></div>
 
 <p>这里使用Liquid的for循环遍历_posts目录下的所有文章并输出标题及文章的默认第一段(相当于预览).</p>
@@ -743,9 +693,4 @@ This page tells you a little bit about me.
     </li>
   </ol>
 </div>
-
-
-<!-- 设置返回主页的超链接 -->
-<!-- <a href="/">Zorch's Homepage</a> -->
-</body>
-</html>
+:ET

@@ -1,18 +1,18 @@
 ---
 layout: default
-title: Blog
+title: 博客列表
 ---
 
 <h1>最新文章</h1>
 
 <!-- 链接到全部博客(for循环遍历) -->
-<ul style="text-indent: 0em;">
+<ul style="text-indent: 0;">
     {% for post in site.posts %}
     <li> 
         <h3>{{ post.date | date_to_string }}
         <a href="{{ post.url }}">{{ post.title }}</a></h3>
         <!-- 显示默认内容的第一行 -->
-        <!-- {{ post.excerpt }} -->
+<!--         {{ post.excerpt }}-->
     </li>
     {% endfor %}
 </ul>

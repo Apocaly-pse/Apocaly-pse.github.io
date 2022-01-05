@@ -221,7 +221,7 @@ title: Blog
         <h3>{{ post.date | date_to_string }}
         <a href="{{ post.url }}">{{ post.title }}</a></h3>
         <!-- 默认内容的第一段 -->
-        {{ post.excerpt }}
+<!--        {{ post.excerpt }}-->
     </li>
     {% endfor %}
 </ul>
@@ -362,11 +362,10 @@ This page tells you a little bit about me.
 
 `cd`到当前目录(即`<username>.github.io`),可以采用`jekyll build`构建静态网页或者`jekyll server`启动服务,这里还是建议直接用`server`,开启服务,然后就可以在浏览器输入`http://localhost:4000`进入你的静态网页了.
 
-使用control+C即可关闭服务,在Jekyll的官方文档中提到: **如果修改了config.yml配置或其他yml文件的配置**,那就需要control+C中止服务并重启服务来刷新配置.
+使用`control+C`即可关闭服务,在Jekyll的官方文档中提到: **如果修改了config.yml配置或其他yml文件的配置**,那就需要`control+C`中止服务并重启服务来刷新配置.
 
 # 最后成果与小结
 
----图片图片图片图片
 
 还是单调了点,之后慢慢学前端的知识再丰富自己的网站吧.
 
