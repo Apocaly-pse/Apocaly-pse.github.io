@@ -1,54 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <!-- 添加CSS路径到当前文件 -->
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <title>Github pages博客  搭建与配置</title>
-
-  <!-- 下面两行用于生成主页标签页以及子网页标签页上面的小图标 -->
-  <link rel="shortcut icon" href="/assets/images/p.ico" type="image/x-icon"/>
-  <link rel="bookmark" href="/assets/images/p.ico"/>
-<!--  渲染数学公式-->
-  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-  <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      inlineMath: [['$','$']]
-    }
-  });
-</script>
-<!--  代码高亮-->
-  <link href='/assets/css/syntax_monokai.css' rel='stylesheet' type='text/css' />
-
-
-</head>
-<body>
-  <!-- 设置导航栏 -->
-  <!-- 使当前网页高亮显示 -->
-<nav>
-  
-    <a href="/" >
-      Home
-    </a>
-  
-    <a href="/blog.html" >
-      Blog
-    </a>
-  
-    <a href="/about.html" >
-      About
-    </a>
-  
-</nav>
-
-  <h1>Github pages博客  搭建与配置</h1>
-<p>
-  25 Mar 2021 - zorchp
-</p>
-
-<h1 id="写在前面">写在前面</h1>
+I"(]<h1 id="写在前面">写在前面</h1>
 
 <p>最近想尝试一下GitHub提供的GitHub Pages功能,通过GitHub强大的服务器支持,可以免费搭建自己的个人站点(个人博客),看了很多博客和教程,特别是Jekyll的官方文档,终于摸索出来一套属于Mac的个人站点搭建方法.</p>
 
@@ -139,28 +89,25 @@ gem sources <span class="nt">-l</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
   <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
-    
-  <span class="nt">&lt;title&gt;</span>{{ page.title }}<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Github pages博客  搭建与配置<span class="nt">&lt;/title&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
-  {{ content }}
   
 <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
 
-<p>下面是博客内容的模板文件<code class="language-plaintext highlighter-rouge">post.html</code>,这里先在文件头部指定了布局为<code class="language-plaintext highlighter-rouge">default</code>,相当于一种对default的继承,下面实现了显示文章的标题,日期以及作者的功能,最后面的<code class="language-plaintext highlighter-rouge">{{content}}</code>是内容(正文)部分.</p>
+<p>下面是博客内容的模板文件<code class="language-plaintext highlighter-rouge">post.html</code>,这里先在文件头部指定了布局为<code class="language-plaintext highlighter-rouge">default</code>,相当于一种对default的继承,下面实现了显示文章的标题,日期以及作者的功能,最后面的``是内容(正文)部分.</p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 layout: default
 ---
 
-<span class="nt">&lt;h1&gt;</span>{{ page.title }}<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h1&gt;</span>Github pages博客  搭建与配置<span class="nt">&lt;/h1&gt;</span>
 <span class="nt">&lt;p&gt;</span>
-  {{ page.date | date_to_string }} - {{page.author}}
+  25 Mar 2021 - zorchp
 <span class="nt">&lt;/p&gt;</span>
 
-{{ content }}
 
 </code></pre></div></div>
 
@@ -180,7 +127,7 @@ layout: default
 
 <h2 id="4-indexmd网页主页">4. index.md网页主页</h2>
 
-<p>这里是一个你网站的主页,也就是<code class="language-plaintext highlighter-rouge">xxx.github.io</code>这个网站打开时显示的默认页面,这里我采用了Markdown语言,大家也可以采用可定制性更高的html.<code class="language-plaintext highlighter-rouge">{{site.title}}</code>会输出当前的页面标题.</p>
+<p>这里是一个你网站的主页,也就是<code class="language-plaintext highlighter-rouge">xxx.github.io</code>这个网站打开时显示的默认页面,这里我采用了Markdown语言,大家也可以采用可定制性更高的html.<code class="language-plaintext highlighter-rouge">Zorch's Homepage</code>会输出当前的页面标题.</p>
 
 <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
 <span class="na">layout</span><span class="pi">:</span> <span class="s">default</span>
@@ -188,10 +135,9 @@ layout: default
 
 <span class="nn">---</span>
 
-{{site.title}}<span class="sb">
+Zorch's Homepage
 
-
-</span></code></pre></div></div>
+</code></pre></div></div>
 
 <h1 id="用来扩展的其他文件">用来扩展的其他文件</h1>
 
@@ -301,9 +247,7 @@ This page tells you a little bit about me.
 
 <p>同时,在这里就可以应用我们之前提到的CSS样式文件了,在navigation.html文件的第四行加入<code class="language-plaintext highlighter-rouge">class="current"</code>,即我们之前设置的current节点的样式,如下:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ item.link }}"</span> <span class="err">{%</span> <span class="na">if</span> <span class="na">page.url =</span><span class="s">=</span> <span class="na">item.link</span> <span class="err">%}</span><span class="na">class=</span><span class="s">"current"</span><span class="err">{%</span> <span class="na">endif</span> <span class="err">%}</span><span class="nt">&gt;</span>
-
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="nt">&gt;</span>
 </code></pre></div></div>
 
 <h2 id="点缀添加主页及标签页的图标">点缀:添加主页及标签页的图标</h2>
@@ -333,10 +277,23 @@ This page tells you a little bit about me.
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
   <span class="c">&lt;!-- 设置导航栏 --&gt;</span>
+  <span class="c">&lt;!-- 使当前网页高亮显示 --&gt;</span>
+<span class="nt">&lt;nav&gt;</span>
   
-  {% include navigation.html %}
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/"</span> <span class="nt">&gt;</span>
+      Home
+    <span class="nt">&lt;/a&gt;</span>
+  
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/blog.html"</span> <span class="nt">&gt;</span>
+      Blog
+    <span class="nt">&lt;/a&gt;</span>
+  
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"/about.html"</span> <span class="nt">&gt;</span>
+      About
+    <span class="nt">&lt;/a&gt;</span>
+  
+<span class="nt">&lt;/nav&gt;</span>
 
-  {{ content }}
   
 <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
@@ -402,9 +359,4 @@ This page tells you a little bit about me.
     </li>
   </ol>
 </div>
-
-
-<!-- 设置返回主页的超链接 -->
-<!-- <a href="/">Zorch's Homepage</a> -->
-</body>
-</html>
+:ET

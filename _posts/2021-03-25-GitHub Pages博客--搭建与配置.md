@@ -100,27 +100,30 @@ description: share some useful skills and tips
 <html>
 <head>
   <meta charset="utf-8">
+    {% raw %}
   <title>{{ page.title }}</title>
 </head>
 <body>
   {{ content }}
+  {% endraw %}
 </body>
 </html>
 ```
 
-下面是博客内容的模板文件`post.html`,这里先在文件头部指定了布局为`default`,相当于一种对default的继承,下面实现了显示文章的标题,日期以及作者的功能,最后面的`{{content}}`是内容(正文)部分.
+下面是博客内容的模板文件`post.html`,这里先在文件头部指定了布局为`default`,相当于一种对default的继承,下面实现了显示文章的标题,日期以及作者的功能,最后面的`{% raw %}{{content}}{% endraw %}`是内容(正文)部分.
 
 ```html
 ---
 layout: default
 ---
-
+{% raw %}
 <h1>{{ page.title }}</h1>
 <p>
   {{ page.date | date_to_string }} - {{page.author}}
 </p>
 
 {{ content }}
+{% endraw %}
 ```
 
 ## 3. \_posts/2021/03/23-blog1.md博客文章
@@ -142,7 +145,7 @@ author: xxx
 
 ## 4. index.md网页主页
 
-这里是一个你网站的主页,也就是`xxx.github.io`这个网站打开时显示的默认页面,这里我采用了Markdown语言,大家也可以采用可定制性更高的html.`{{site.title}}`会输出当前的页面标题.
+这里是一个你网站的主页,也就是`xxx.github.io`这个网站打开时显示的默认页面,这里我采用了Markdown语言,大家也可以采用可定制性更高的html.`{% raw %}{{site.title}}{% endraw %}`会输出当前的页面标题.
 
 ```markdown
 ---
@@ -150,8 +153,9 @@ layout: default
 title: 欢迎来到我的博客
 
 ---
-
+{% raw %}
 {{site.title}}
+{% endraw %}
 
 ```
 
@@ -216,6 +220,7 @@ title: Blog
 
 <!-- 链接到全部博客(for循环遍历) -->
 <ul>
+    {% raw %}
     {% for post in site.posts %}
     <li> 
         <h3>{{ post.date | date_to_string }}
@@ -224,6 +229,7 @@ title: Blog
 <!--        {{ post.excerpt }}-->
     </li>
     {% endfor %}
+    {% endraw %}
 </ul>
 ```
 
@@ -251,11 +257,13 @@ This page tells you a little bit about me.
 ```html
 <!-- 设置导航栏,并使当前网页高亮显示 -->
 <nav>
-  {% for item in site.data.navigation %}
+    {% raw %}
+    {% for item in site.data.navigation %}
     <a href="{{ item.link }}" {% if page.url == item.link %}{% endif %}>
       {{ item.name }}
     </a>
-  {% endfor %}
+    {% endfor %}
+    {% endraw %}
 </nav>
 ```
 
@@ -275,7 +283,9 @@ This page tells you a little bit about me.
 同时,在这里就可以应用我们之前提到的CSS样式文件了,在navigation.html文件的第四行加入`class="current"`,即我们之前设置的current节点的样式,如下:
 
 ```html
+{% raw %}
     <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>
+{% endraw %}
 ```
 
 
@@ -313,9 +323,11 @@ This page tells you a little bit about me.
 </head>
 <body>
   <!-- 设置导航栏 -->
+  {% raw %}
   {% include navigation.html %}
 
   {{ content }}
+  {% endraw %}
 </body>
 </html>
 ```
