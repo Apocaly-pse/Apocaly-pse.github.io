@@ -1,4 +1,8 @@
-@import "main";
+@import "/_sass/main.scss";
+
+---
+
+---
 
 .highlight .c {
   color: #545454;

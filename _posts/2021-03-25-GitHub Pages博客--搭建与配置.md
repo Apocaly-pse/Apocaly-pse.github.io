@@ -1,18 +1,16 @@
 ---
-layout: post
+layout: post 
 author: zorchp
 ---
 
-
-
-#  写在前面
+# 写在前面
 
 最近想尝试一下GitHub提供的GitHub Pages功能,通过GitHub强大的服务器支持,可以免费搭建自己的个人站点(个人博客),看了很多博客和教程,特别是Jekyll的官方文档,终于摸索出来一套属于Mac的个人站点搭建方法.
 
 我主要使用了Jekyll作为渲染静态页面的引擎,本来是想直接拷贝别人做好的,然后自己再进行修改,但是感觉这样还是学不到东西,所以还是自己亲自动手实现一下啦~
 
-本文部分参考了阮一峰老师的博客[^2]以及Jekyll的step-by-step-tutorial文档[^3],(不得不说Dash是真的不错,校园网时好时坏的情况下还是要靠离线文档挑大梁了).教程部分主要选取了jekyll的官方教程[^3],教程是英文的,不过写的很详细,想深入学习的话还得看官方文档.
-
+本文部分参考了阮一峰老师的博客[^2]以及Jekyll的step-by-step-tutorial文档[^3],(不得不说Dash是真的不错,校园网时好时坏的情况下还是要靠离线文档挑大梁了).教程部分主要选取了jekyll的官方教程[^3]
+,教程是英文的,不过写的很详细,想深入学习的话还得看官方文档.
 
 # 前期准备
 
@@ -26,9 +24,11 @@ author: zorchp
 
 ## Jekyll
 
-一开始我以为直接使用Mac自带的ruby环境就可以下载Jekyll和bundler了,但是一番操作之后发现并不行...无奈对ruby不是很了解,走了弯路,之后我发现在Jekyll的官方安装文档[^1]中有关于macOS如何安装Jekyll的介绍,很快就完成了Jekyll及其依赖的安装.
+一开始我以为直接使用Mac自带的ruby环境就可以下载Jekyll和bundler了,但是一番操作之后发现并不行...无奈对ruby不是很了解,走了弯路,之后我发现在Jekyll的官方安装文档[^1]
+中有关于macOS如何安装Jekyll的介绍,很快就完成了Jekyll及其依赖的安装.
 
-首先你需要安装命令行开发工具(终端输入`xcode-select --install`),完成之后下载本地编译版brew,这个我在之前已经写过一篇文章,大家可以参考一下[《m1 MBA配置Homebrew环境+国内源配置》](https://blog.csdn.net/qq_41437512/article/details/112435816),然后输入:
+首先你需要安装命令行开发工具(终端输入`xcode-select --install`)
+,完成之后下载本地编译版brew,这个我在之前已经写过一篇文章,大家可以参考一下[《m1 MBA配置Homebrew环境+国内源配置》](https://blog.csdn.net/qq_41437512/article/details/112435816),然后输入:
 
 ```bash
 brew install ruby
@@ -68,10 +68,10 @@ source ~/.zshrc
 
 完成上述的几个步骤后,就可以创建自己的个人站点了,这里需要先创建几个文件(文件夹)如下:
 
-1.  `_config.yml`: 配置文件(yaml)
-2.  `_layouts/default.html`: 网页模板文件(html)
-3.  `_posts/2021-03-23-blog1.md`: 你的博客文章就放在这里(可以用HTML,也可以用Markdown)
-4.  `index.md`: Blog的Markdown主页
+1. `_config.yml`: 配置文件(yaml)
+2. `_layouts/default.html`: 网页模板文件(html)
+3. `_posts/2021-03-23-blog1.md`: 你的博客文章就放在这里(可以用HTML,也可以用Markdown)
+4. `index.md`: Blog的Markdown主页
 
 这几个文件夹中的内容已经足够渲染出一个包含基本内容的博客了,但是如果想实现更为复杂的功能就还需要新建一些配置文件/文件夹,后面我们会说到.
 
@@ -99,31 +99,31 @@ description: share some useful skills and tips
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-    {% raw %}
-  <title>{{ page.title }}</title>
+    <meta charset="utf-8">
+
+    <title>{{"{{ page.title "}}}}</title>
 </head>
 <body>
-  {{ content }}
-  {% endraw %}
+{{"{{ content "}}}}
+
 </body>
 </html>
 ```
 
-下面是博客内容的模板文件`post.html`,这里先在文件头部指定了布局为`default`,相当于一种对default的继承,下面实现了显示文章的标题,日期以及作者的功能,最后面的`{% raw %}{{content}}{% endraw %}`是内容(正文)部分.
+下面是博客内容的模板文件`post.html`, 这里先在文件头部指定了布局为`default`, 相当于一种对default的继承, 下面实现了显示文章的标题,日期以及作者的功能,最后面的`{{" {{ content "}}}}`是内容(
+正文)部分.
 
 ```html
 ---
 layout: default
 ---
-{% raw %}
+
 <h1>{{ page.title }}</h1>
 <p>
-  {{ page.date | date_to_string }} - {{page.author}}
+    {{" {{ page.date | date_to_string "}}}} - {{" {{ page.author "}}}}
 </p>
 
-{{ content }}
-{% endraw %}
+{{" {{ content "}}}}
 ```
 
 ## 3. \_posts/2021/03/23-blog1.md博客文章
@@ -132,8 +132,7 @@ layout: default
 
 ```markdown
 ---
-layout: post
-author: xxx
+layout: post author: xxx
 ---
 
 ## 写在前面
@@ -141,25 +140,19 @@ author: xxx
 这是我的第一个个人博客
 ```
 
-
-
 ## 4. index.md网页主页
 
-这里是一个你网站的主页,也就是`xxx.github.io`这个网站打开时显示的默认页面,这里我采用了Markdown语言,大家也可以采用可定制性更高的html.`{% raw %}{{site.title}}{% endraw %}`会输出当前的页面标题.
+这里是一个你网站的主页,也就是`xxx.github.io`这个网站打开时显示的默认页面,这里我采用了Markdown语言,大家也可以采用可定制性更高的html.`{% raw %}{{site.title}}{% endraw %}`
+会输出当前的页面标题.
 
 ```markdown
 ---
-layout: default
-title: 欢迎来到我的博客
+layout: default title: 欢迎来到我的博客
 
 ---
-{% raw %}
-{{site.title}}
-{% endraw %}
+{{"{{ site.title "}}}}
 
 ```
-
-
 
 # 用来扩展的其他文件
 
@@ -177,22 +170,19 @@ title: 欢迎来到我的博客
 
 ```css
 .current {
-  color: green;
+    color: green;
 }
 ```
 
-
-
-### `assets/css/styles.scss`文件
+### `/assets/css/styles.scss`文件
 
 用于指出css文件存放的位置,其内容为
 
 ```css
 ---
-
 ---
 
-@import "main";
+@import "/_sass/main.scss";
 ```
 
 这里的yaml头是必要的,用来声明jekyll引擎要处理的文档,下面的语句代表导入上面的`main.scss`样式文件.
@@ -201,10 +191,8 @@ title: 欢迎来到我的博客
 
 ```html
   <!-- 添加CSS路径到当前文件 -->
-  <link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="/assets/css/styles.css">
 ```
-
-
 
 ## 设置博客列表及关于页面
 
@@ -220,16 +208,15 @@ title: Blog
 
 <!-- 链接到全部博客(for循环遍历) -->
 <ul>
-    {% raw %}
-    {% for post in site.posts %}
-    <li> 
-        <h3>{{ post.date | date_to_string }}
-        <a href="{{ post.url }}">{{ post.title }}</a></h3>
+    
+    {{ "{% for post in site.posts " }} %}
+    <li>
+        <h3>{{" {{ post.date | date_to_string "}}}}
+            <a href="{{' {{ post.url '}}}}">{{" {{ post.title "}}}}</a></h3>
         <!-- 默认内容的第一段 -->
-<!--        {{ post.excerpt }}-->
+        <!-- {{" {{ post.excerpt "}}}} -->
     </li>
-    {% endfor %}
-    {% endraw %}
+    {{"{% endfor " }}%}
 </ul>
 ```
 
@@ -239,16 +226,13 @@ title: Blog
 
 ```markdown
 ---
-layout: default
-title: About
+layout: default title: About
 ---
 
 # About page
 
 This page tells you a little bit about me.
 ```
-
-
 
 ## 导航栏
 
@@ -257,13 +241,11 @@ This page tells you a little bit about me.
 ```html
 <!-- 设置导航栏,并使当前网页高亮显示 -->
 <nav>
-    {% raw %}
-    {% for item in site.data.navigation %}
-    <a href="{{ item.link }}" {% if page.url == item.link %}{% endif %}>
-      {{ item.name }}
+    {{" {% for item in site.data.navigation " }}%}
+    <a href="{{'{{ item.link '}}}}" {{"{% if page.url== item.link "}}%}{{"{% endif " }}%}>
+        {{" {{ item.name "}}}}
     </a>
-    {% endfor %}
-    {% endraw %}
+    {{"{% endfor " }}%}
 </nav>
 ```
 
@@ -283,28 +265,21 @@ This page tells you a little bit about me.
 同时,在这里就可以应用我们之前提到的CSS样式文件了,在navigation.html文件的第四行加入`class="current"`,即我们之前设置的current节点的样式,如下:
 
 ```html
-{% raw %}
-    <a href="{{ item.link }}" {% if page.url == item.link %}class="current"{% endif %}>
-{% endraw %}
+<a href="{{'{{ item.link '}}}}" {{"{% if page.url== item.link " }}%}class="current" {{"{% endif "}}%}>
 ```
-
-
-
-
 
 ## 点缀:添加主页及标签页的图标
 
-一般在浏览器中,打开的标签页左边都会有个小图标,我们的网站也可以实现这个功能,只需要将制作好的ico图标文件放在`assets/images/favicon.ico`即可,jekyll就会找到图标的位置,然后在default.html的`<head></head>`中加入:
+一般在浏览器中,打开的标签页左边都会有个小图标,我们的网站也可以实现这个功能,只需要将制作好的ico图标文件放在`assets/images/favicon.ico`
+即可,jekyll就会找到图标的位置,然后在default.html的`<head></head>`中加入:
 
 ```html
   <!-- 下面两行用于生成主页标签页以及子网页标签页上面的小图标 -->
-  <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon"/>
-  <link rel="bookmark" href="/assets/images/favicon.ico"/>
+<link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon"/>
+<link rel="bookmark" href="/assets/images/favicon.ico"/>
 ```
 
 就可以正确显示标签页图标了.
-
-
 
 最后的default.html文件如下:
 
@@ -312,27 +287,24 @@ This page tells you a little bit about me.
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <!-- 添加CSS路径到当前文件 -->
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <title>{{ page.title }}</title>
+    <meta charset="utf-8">
+    <!-- 添加CSS路径到当前文件 -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <title>{{"{{ page.title "}}}}</title>
 
-  <!-- 下面两行用于生成主页标签页以及子网页标签页上面的小图标 -->
-  <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon"/>
-  <link rel="bookmark" href="/assets/images/favicon.ico"/>
+    <!-- 下面两行用于生成主页标签页以及子网页标签页上面的小图标 -->
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon"/>
+    <link rel="bookmark" href="/assets/images/favicon.ico"/>
 </head>
 <body>
-  <!-- 设置导航栏 -->
-  {% raw %}
-  {% include navigation.html %}
 
-  {{ content }}
-  {% endraw %}
+<!-- 设置导航栏 -->
+{{"{% include navigation.html "}}%}
+
+{{"{{ content "}}}}
 </body>
 </html>
 ```
-
-
 
 # 文件树目录
 
@@ -366,18 +338,16 @@ This page tells you a little bit about me.
 └── index.md
 ```
 
-
-
 # Jekyll本地服务部署
 
 有两种生成静态网页的方式:
 
-`cd`到当前目录(即`<username>.github.io`),可以采用`jekyll build`构建静态网页或者`jekyll server`启动服务,这里还是建议直接用`server`,开启服务,然后就可以在浏览器输入`http://localhost:4000`进入你的静态网页了.
+`cd`到当前目录(即`<username>.github.io`),可以采用`jekyll build`构建静态网页或者`jekyll server`启动服务,这里还是建议直接用`server`
+,开启服务,然后就可以在浏览器输入`http://localhost:4000`进入你的静态网页了.
 
 使用`control+C`即可关闭服务,在Jekyll的官方文档中提到: **如果修改了config.yml配置或其他yml文件的配置**,那就需要`control+C`中止服务并重启服务来刷新配置.
 
 # 最后成果与小结
-
 
 还是单调了点,之后慢慢学前端的知识再丰富自己的网站吧.
 
