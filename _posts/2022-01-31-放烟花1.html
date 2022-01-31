@@ -30,6 +30,9 @@
 <div style="display:none">
     <div class="shape">虎年大吉</div>
     <div class="shape">虎虎生威</div>
+    <div class="shape">2022新年快乐</div>
+    <div class="shape">2022新年快乐</div>
+    <div class="shape">2022新年快乐</div>
     <div class="shape">万事如意</div>
     <div class="shape">吉星高照</div>
     <div class="shape">富贵平安</div>
@@ -76,7 +79,7 @@
         ctx.restore();
 
         var newTime = new Date();
-        if (newTime - lastTime > 200 + (window.innerHeight - 767) / 4) {
+        if (newTime - lastTime > 10 + (window.innerHeight - 767) / 2) {
             var random = Math.random() * 100 > 2;
             var x = getRandom(canvas.width / 5, canvas.width * 4 / 5);
             var y = getRandom(50, 200);
@@ -275,7 +278,7 @@
         } else {
             var text = ele.innerHTML;
             context.save();
-            var fontSize = 200;
+            var fontSize = 160;
             context.font = fontSize + "px 宋体 bold";
             context.textAlign = "center";
             context.textBaseline = "middle";
