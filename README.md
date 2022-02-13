@@ -1,7 +1,9 @@
-# Intro
+# 简介
 
-This is my Blog powered by _GitHub Pages_, Jekyll.
+这是我的个人博客, 由Jekyll生成.
 
-# More Info
 
-I am a college student in DLUT, major in Mathematics and love programming.
+
+# 更多信息
+
+我来自dlut, 主修Combinatorics.
