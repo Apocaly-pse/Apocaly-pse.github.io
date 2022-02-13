@@ -1,11 +1,11 @@
-current directory: /Users/hep/code/front-end/zorchp/vendor/bundle/ruby/3.1.0/gems/sassc-2.4.0/ext
-/opt/homebrew/opt/ruby/bin/ruby -I /opt/homebrew/Cellar/ruby/3.1.0/lib/ruby/3.1.0 -r ./siteconf20220213-19250-wv1nzh.rb extconf.rb
+current directory: /Users/hep/code/front-end/Apocaly-pse.github.io/vendor/bundle/ruby/3.1.0/gems/sassc-2.4.0/ext
+/opt/homebrew/opt/ruby/bin/ruby -I /opt/homebrew/Cellar/ruby/3.1.0/lib/ruby/3.1.0 -r ./siteconf20220213-24778-274lwo.rb extconf.rb
 creating Makefile
 
-current directory: /Users/hep/code/front-end/zorchp/vendor/bundle/ruby/3.1.0/gems/sassc-2.4.0/ext
+current directory: /Users/hep/code/front-end/Apocaly-pse.github.io/vendor/bundle/ruby/3.1.0/gems/sassc-2.4.0/ext
 make DESTDIR\= clean
 
-current directory: /Users/hep/code/front-end/zorchp/vendor/bundle/ruby/3.1.0/gems/sassc-2.4.0/ext
+current directory: /Users/hep/code/front-end/Apocaly-pse.github.io/vendor/bundle/ruby/3.1.0/gems/sassc-2.4.0/ext
 make DESTDIR\=
 compiling ./libsass/src/ast.cpp
 compiling ./libsass/src/ast2c.cpp
@@ -75,6 +75,6 @@ compiling ./libsass/src/util_string.cpp
 compiling ./libsass/src/values.cpp
 linking shared-object sassc/libsass.bundle
 
-current directory: /Users/hep/code/front-end/zorchp/vendor/bundle/ruby/3.1.0/gems/sassc-2.4.0/ext
+current directory: /Users/hep/code/front-end/Apocaly-pse.github.io/vendor/bundle/ruby/3.1.0/gems/sassc-2.4.0/ext
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 libsass.bundle ./.gem.20220213-19250-ooauhz/sassc
+/usr/bin/install -c -m 0755 libsass.bundle ./.gem.20220213-24778-n8f9xs/sassc
