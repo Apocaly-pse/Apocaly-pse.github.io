@@ -85,6 +85,8 @@ GEM
       unicode-display_width (~> 1.1, >= 1.1.1)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2021.5)
+      tzinfo (>= 1.0.0)
     unicode-display_width (1.8.0)
     webrick (1.7.0)
 
@@ -92,8 +94,8 @@ PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
-  jekyll
   jekyll-text-theme
+  tzinfo-data
   webrick (~> 1.7)
 
 BUNDLED WITH
