@@ -58,7 +58,7 @@
 
 # 主要参考
 
-[^1]: [我的Jekyll博客 | 开放笔记 (goooooouwa.fun)](https://goooooouwa.fun/productivity/2021/03/29/blog-setup.html#博客配置一览);
+[^1]:[我的Jekyll博客 | 开放笔记 (goooooouwa.fun)](https://goooooouwa.fun/productivity/2021/03/29/blog-setup.html#博客配置一览);
 [^2]:[快速开始 - TeXt Theme (tianqi.name)](https://tianqi.name/jekyll-TeXt-theme/docs/zh/quick-start);
 [^3]:[Logo 和 Favicon - TeXt Theme (tianqi.name)](https://tianqi.name/jekyll-TeXt-theme/docs/zh/logo-and-favicon);
 [^4]: [github博客自动同步到gitee（保姆级教程）_李梨同学的博客-CSDN博客_github同步到gitee](https://blog.csdn.net/outman_1921/article/details/115454572?spm=1001.2014.3001.5506);
