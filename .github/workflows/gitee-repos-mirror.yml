@@ -4,13 +4,13 @@ on:
 # push:
   schedule:
     # 每天北京时间9点跑
-    - cron:  '0 12 16 * *'
+    - cron:  '0 21 12 * *'
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - name: Mirror the Github organization repos to Gitee.
-      uses: Apocaly-pse/Apocaly-pse.github.io
+      uses: Yikun/gitee-mirror-action@v0.01
       #代表我们用的仓库，不用同步
       with:
         # 必选，需要同步的Github用户（源）
