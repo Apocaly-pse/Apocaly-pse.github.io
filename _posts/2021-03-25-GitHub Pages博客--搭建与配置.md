@@ -311,7 +311,7 @@ This page tells you a little bit about me.
 
 注意这里是没有启动过`Jekyll server`服务的,开启之后还会生成一些文件夹,如`_site`文件夹(jekyll引擎生成的站点文件都在这里)和`.jekyll_cache`文件夹(缓存文件).
 
-```
+```c
 .
 ├── README.md
 ├── _config.yml
