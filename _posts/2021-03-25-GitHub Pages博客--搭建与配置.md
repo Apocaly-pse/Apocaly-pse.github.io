@@ -1,5 +1,5 @@
 ---
-author: zorchp
+tags: Frontend
 ---
 
 # 写在前面
@@ -131,7 +131,8 @@ layout: default
 
 ```markdown
 ---
-layout: post author: xxx
+layout: post 
+author: xxx
 ---
 
 ## 写在前面
@@ -141,13 +142,14 @@ layout: post author: xxx
 
 ## 4. index.md网页主页
 
-这里是一个你网站的主页,也就是`xxx.github.io`这个网站打开时显示的默认页面,这里我采用了Markdown语言,大家也可以采用可定制性更高的html.`{% raw %}{{site.title}}{% endraw %}`
-会输出当前的页面标题.
+这里是一个你网站的主页,也就是`xxx.github.io`这个网站打开时显示的默认页面,这里我采用了Markdown语言,大家也可以采用可定制性更高的html.
+
+`{% raw %}{{site.title}}{% endraw %}` 会输出当前的页面标题.
 
 ```markdown
 ---
-layout: default title: 欢迎来到我的博客
-
+layout: default 
+title: 欢迎来到我的博客
 ---
 {{"{{ site.title "}}}}
 

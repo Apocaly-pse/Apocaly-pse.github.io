@@ -1,3 +1,9 @@
+---
+tags: Frontend
+---
+
+
+
 # 写在前面
 
 去年就已经开始折腾了jekyll+GitHub Pages的个人站点搭建, 一直以来的想法是自己从零开始进行前端网页的配置, 出发点是好的, 但是我发现最近已经没有时间让我折腾这些了.
@@ -106,7 +112,28 @@ bundle exec jekyll serve
 
 
 
+# 一点小问题
 
+页面中每次都要在`yaml`头部中添加作者信息, 而不能每次默认添加. 解决方案是修改`_config.yml`配置文件, 如下:
+
+```yaml
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: article
+      author: zorchp # 添加这一行
+      sharing: true
+      license: true
+      aside:
+        toc: true
+      show_edit_on_github: true
+      show_subscribe: true
+      pageview: true
+```
+
+在本地预览的时候需要重启一下本地服务, 才能刷新该配置文件的更改.
 
 # 关于数学公式
 
@@ -117,6 +144,8 @@ bundle exec jekyll serve
 >   其实不仅是在数学行内公式中, 对于一般的md文件, 如果写入字符`|`, 其渲染引擎会将其自动识别为表格分隔符, 要解决这个问题只需在`|`前面加上一个`\`.
 
 
+
+另外, 这个主题的数学支持还有一个问题, 就是行间公式和文字之间一定要加上**空行**, 如果不加就仍然显示为行内公式..
 
 # 从github迁移镜像到gitee
 
@@ -133,7 +162,7 @@ bundle exec jekyll serve
 
 具体的方法请见[^6]或者action主页[^8].
 
-这个方法虽然是通过模拟登陆的方式进行更新的, 但是也已经相当好用了, 成功更新之后会有gitee公众号的登陆提示. (在提交之后会进行事件触发, 直接进行同步更新, 在此期间gitee的站点会显示404)
+这个方法虽然是通过模拟登陆的方式进行更新的, 但是也已经相当好用了, 成功更新之后会有gitee公众号的登陆提示. 在提交之后会进行事件触发, 然后进行同步更新, 在此期间(大约2分钟)gitee的站点会显示404.
 
 # 文件结构
 

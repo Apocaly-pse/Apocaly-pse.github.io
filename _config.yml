@@ -207,6 +207,7 @@ defaults:
       type: posts
     values:
       layout: article
+      author: zorchp
       sharing: true
       license: true
       aside:
