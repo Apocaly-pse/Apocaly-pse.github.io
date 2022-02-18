@@ -109,8 +109,7 @@ description: share some useful skills and tips
 </html>
 ```
 
-下面是博客内容的模板文件`post.html`, 这里先在文件头部指定了布局为`default`, 相当于一种对default的继承, 下面实现了显示文章的标题,日期以及作者的功能,最后面的`{{" {{ content "}}}}`是内容(
-正文)部分.
+下面是博客内容的模板文件`post.html`, 这里先在文件头部指定了布局为`default`, 相当于一种对default的继承, 下面实现了显示文章的标题,日期以及作者的功能,最后面的`{{" {{ content "}}}}`是内容(正文)部分.
 
 ```html
 ---

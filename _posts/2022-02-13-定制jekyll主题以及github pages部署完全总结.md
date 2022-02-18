@@ -114,7 +114,9 @@ bundle exec jekyll serve
 
 # 一点小问题
 
-页面中每次都要在`yaml`头部中添加作者信息, 而不能每次默认添加. 解决方案是修改`_config.yml`配置文件, 如下:
+页面中每次都要在`yaml`头部中添加作者信息, 而不能每次默认添加. 
+
+解决方案是修改`_config.yml`配置文件, 如下:
 
 ```yaml
 defaults:
