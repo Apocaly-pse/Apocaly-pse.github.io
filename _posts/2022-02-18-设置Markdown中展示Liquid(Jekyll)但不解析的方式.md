@@ -65,7 +65,7 @@ This is a comment in Liquid
 或者
 
 ```html
-{% raw  %}{{ "{{ this " }}}}{% endraw  %}
+{% raw  %} {{ "{{ this " }}}} {% endraw %}
 ```
 
 显示为:
@@ -79,19 +79,19 @@ This is a comment in Liquid
 当然, 如果需要显示下面的命令: 
 
 ```html
-{{ "{{ " }}"{{ "{% this" }} " }}{{ "}}%}
+{% raw %} {{ "{% this " }}%} {% endraw %}
 ```
 
 则需要这样来写:
 
 ```html
-{% raw  %}{{ "{{ " }}"{{ "{% this" }} " }}{{ "}}%}{% endraw  %}
+{% raw  %} {{ "{{ " }}"{{ "{% this" }} " }}{{ }}%} {% endraw %}
 ```
 
 同理, 如果要显示下面的命令:
 
 ```html
-{{ "{{ " }}"{{ "{{ this" }} " }}{{ }}}}
+{% raw %} {{ "{{ this " }}}} {% endraw %}
 ```
 
 就要这样来写:
