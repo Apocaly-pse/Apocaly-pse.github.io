@@ -48,7 +48,7 @@ tags: LaTeX xy-pic
 \end{document}
 ```
 
-其他代码我放在[latexstudio]了.
+其他代码我放在[latexstudio](https://www.latexstudio.net/index/details/index/ids/2691)了. 
 
 费了不少功夫, 之后再抽空讲解一下代码吧. 主要就是参考了xypic-guide和xypic-refer[^2][^3].
 

@@ -57,4 +57,18 @@ tags: English Life
 
 ## day13: On What You Want Now and What You Want Most
 
+-   the instant fleeting pleasure: 转瞬即逝的乐趣
+-   precedent: 先例
 -   
+
+## Day 14: On Long-Term Focus
+
+-   delude: 欺骗
+-   mindset: 观念模式
+-   haul: 赃物
+-   physique: 体格
+-   sustainable: 可持续的
+-   routine:常规
+-   endeavor: 努力
+-   
+
