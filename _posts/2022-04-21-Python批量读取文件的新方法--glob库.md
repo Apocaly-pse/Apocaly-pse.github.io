@@ -1,13 +1,12 @@
 ---
-tags:
-Python glob
+tags: Python glob
 ---
 
 
 
 # 写在前面
 
-应小傻狗的要求, 补一补之前就想写的关于`glob`库(Filename globbing utility, Unix style pathname pattern expansion, 类Unix路径名模式扩展)的使用, 有了这个库, 通过Python读取文件(主要是递归方式读取), 就再也不用`os.walk()`那样复杂了, 虽然可定制性提高了, 代码的复杂度也上去了, 通常是记不住代码还要重新去找. 
+补一补之前就想写的关于`glob`库(Filename globbing utility, Unix style pathname pattern expansion, 类Unix路径名模式扩展)的使用, 有了这个库, 通过Python读取文件(主要是递归方式读取), 就再也不用`os.walk()`那样复杂了, 虽然可定制性提高了, 代码的复杂度也上去了, 通常是记不住代码还要重新去找. 
 
 
 
