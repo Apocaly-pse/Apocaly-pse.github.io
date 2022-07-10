@@ -224,7 +224,8 @@ curl -vv https://www.google.com
 
 # 参考
 
-[^1]:[[multipassd-vm-instances.json\] Empty file · Issue #2494 · canonical/multipass (github.com)](https://github.com/canonical/multipass/issues/2494);
+[^1]:[multipassd-vm-instances.json Empty file · Issue #2494 · canonical/multipass (github.com)](https://github.com/canonical/multipass/issues/2494);
+
 [^2]:[Multipass Documentation | Multipass documentation](https://multipass.run/docs);
 [^3]:[Graphical desktop in Multipass | Multipass documentation](https://multipass.run/docs/graphical-desktop-in-multipass);
 

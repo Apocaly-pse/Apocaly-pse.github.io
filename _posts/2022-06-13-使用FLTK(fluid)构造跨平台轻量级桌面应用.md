@@ -23,3 +23,5 @@ tags: FLTK C++
 <img src="https://s2.loli.net/2022/06/13/eXc2txMSQZGOlT5.jpg"/>
 
 <img src="https://s2.loli.net/2022/06/13/vT2gqFe6EfkZSVJ.jpg"/>
+
+第一个界面名为`widgetbar`, 默认是不显示的, 可以从设置里面打开.
