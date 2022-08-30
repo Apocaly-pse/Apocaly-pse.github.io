@@ -196,7 +196,7 @@ docker@minikube:~$ cat /proc/version
 Linux version 5.10.109-0-virt (buildozer@build-3-14-aarch64) (gcc (Alpine 10.3.1_git20210424) 10.3.1 20210424, GNU ld (GNU Binutils) 2.35.2) #1-Alpine SMP Mon, 28 Mar 2022 11:20:52 +0000
 ```
 
-# Close minikube service
+## Close minikube service
 
 It should be noted here that you can't shut down the cluster through `minikube stop`, which will lose the previously created environment and replace it with `minikube pause` and `minikube unpause`, as follows:
 
@@ -271,14 +271,14 @@ Certainly, if this article helps you, I will be very happy :laughing:~
 
 # Ref
 
-[^1]:[Goodbye Docker Desktop, Hello Minikube! | by Abhinav Sonkar | ITNEXT](https://itnext.io/goodbye-docker-desktop-hello-minikube-3649f2a1c469);
-[^2]:[Run Docker without Docker Desktop on macOS | Dhwaneet Bhatt](https://dhwaneetbhatt.com/blog/run-docker-without-docker-desktop-on-macos);
-[^3]:[How to run Minikube with Podman. Since I switched from an Intel PC to a… | by Jan Sagurna | Towards Dev](https://towardsdev.com/how-to-run-minikube-with-podman-214310695e26);
+[^1]:[Goodbye Docker Desktop, Hello Minikube! \| by Abhinav Sonkar | ITNEXT](https://itnext.io/goodbye-docker-desktop-hello-minikube-3649f2a1c469);
+[^2]:[Run Docker without Docker Desktop on macOS \| Dhwaneet Bhatt](https://dhwaneetbhatt.com/blog/run-docker-without-docker-desktop-on-macos);
+[^3]:[How to run Minikube with Podman. Since I switched from an Intel PC to a… \| by Jan Sagurna \| Towards Dev](https://towardsdev.com/how-to-run-minikube-with-podman-214310695e26);
 [^4]:[abiosoft/colima: Container runtimes on macOS (and Linux) with minimal setup (github.com)](https://github.com/abiosoft/colima);
 [^5]:[failed to download kic base image or any fallback image (unable to access gcr.io) · Issue #8997 · kubernetes/minikube (github.com)](https://github.com/kubernetes/minikube/issues/8997);
-[^6]:[How to run Minikube with Podman. Since I switched from an Intel PC to a… | by Jan Sagurna | Towards Dev](https://towardsdev.com/how-to-run-minikube-with-podman-214310695e26);
+[^6]:[How to run Minikube with Podman. Since I switched from an Intel PC to a… \| by Jan Sagurna \| Towards Dev](https://towardsdev.com/how-to-run-minikube-with-podman-214310695e26);
 [^7]:[Minikube didnt start · Issue #14477 · kubernetes/minikube (github.com)](https://github.com/kubernetes/minikube/issues/14477#issuecomment-1176188284);
 [^8]:[Container Runtimes Part 1: An Introduction to Container Runtimes - Ian Lewis](https://www.ianlewis.org/en/container-runtimes-part-1-introduction-container-r);
-[^9]:[kicbase/stable Tags | Docker Hub](https://hub.docker.com/r/kicbase/stable/tags);
+[^9]:[kicbase/stable Tags \| Docker Hub](https://hub.docker.com/r/kicbase/stable/tags);
 [^10]:[Package minikube/kicbase (github.com)](https://github.com/kubernetes/minikube/pkgs/container/minikube%2Fkicbase);
 

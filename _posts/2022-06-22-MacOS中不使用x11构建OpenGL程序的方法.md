@@ -33,6 +33,32 @@ cc -o main square.cpp -lglew -framework Cocoa -framework OpenGL -framework glut
 
 
 
+# 更新: cmake配置文件
+
+这里贴出来cmake配置文件, 参考了Stack Overflow的一篇回答[^4], 通过`find_library`的方式定位并通过`target_link_libraries`链接macOS中的`framework`, 完整的文件如下:
+
+```cmake
+cmake_minimum_required(VERSION 3.21)
+project(OpenGL1)
+
+set(CMAKE_CXX_STANDARD 17)
+
+set(program_SOURCES main.cpp)
+
+find_library(Cocoa_Library Cocoa)
+find_library(OpenGl_Library OpenGL)
+find_library(GLUT_Library glut)
+
+
+add_executable(${PROJECT_NAME} ${program_SOURCES})
+target_link_libraries(${PROJECT_NAME} ${Cocoa_Library}
+      								  ${OpenGl_Library}
+        							  ${GLUT_Library})
+
+
+
+```
+
 
 
 
@@ -42,3 +68,4 @@ cc -o main square.cpp -lglew -framework Cocoa -framework OpenGL -framework glut
 [^1]:[M1 MacBook OpenGL 配置 - F5的笔记本 (f5soft.site)](https://f5soft.site/zh/notes/2021/0310/);
 [^2]:[eclipse - Why does my Freeglut App comes up with XQuartz/X11? - Stack Overflow](https://stackoverflow.com/questions/23430397/why-does-my-freeglut-app-comes-up-with-xquartz-x11/72709205#72709205);
 [^3]:[GLFW: Building applications](https://www.glfw.org/docs/latest/build_guide.html);
+[^4]:[Why I cannot link the Mac framework file with CMake? - Stack Overflow](https://stackoverflow.com/questions/17070101/why-i-cannot-link-the-mac-framework-file-with-cmake);
