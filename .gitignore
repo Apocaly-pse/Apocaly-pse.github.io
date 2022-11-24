@@ -17,6 +17,7 @@ node_modules/
 /.bundle/
 /vendor/bundle
 *.gem
+.idea/
 
 yarn.lock
 package-lock.json
