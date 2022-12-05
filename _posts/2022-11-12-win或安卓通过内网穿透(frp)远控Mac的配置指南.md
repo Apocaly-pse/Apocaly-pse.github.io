@@ -18,8 +18,8 @@ After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=/opt/frp
-ExecStart=/opt/frp/frps -c /opt/frp/frps.ini
+WorkingDirectory=/opt/frps
+ExecStart=/opt/frps/frps -c /opt/frps/frps.ini
 Restart=on-failure
 
 [Install]
@@ -35,7 +35,7 @@ WantedBy=multi-user.target
 bind_port = 7000
 # kcp_bind_port = 7000
 dashboard_port = 7500
-log_file = /opt/frp/frps.log
+log_file = /opt/frps/frps.log
 # dashboard's username and password are both optional，if not set, default is admin.
 dashboard_user = admin
 dashboard_pwd = admin
@@ -62,7 +62,7 @@ systemctl status frps.service      # 查看 frps 服务状态
       Tasks: 5 (limit: 4432)
      Memory: 19.2M
      CGroup: /system.slice/frps.service
-             └─746 /opt/frp/frps -c /opt/frp/frps.ini
+             └─746 /opt/frps/frps -c /opt/frps/frps.ini
 ```
 
 # Mac被控端的配置

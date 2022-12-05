@@ -10,6 +10,8 @@ tags: Leanote Server Tips
 
 配置Linux server, 现在已经是轻车熟路了, 但是这次配置的calibre需要一个新的内容, docker. 之前虽然接触过一些, 但是还是不够熟悉, 下面的一步步配置也算是对docker基本命令做一个总结了.
 
+>   docker 安装参考[^5].
+
 先pull一下镜像, 稍后会用到.
 
 ```bash
@@ -200,8 +202,10 @@ python3 cps.py -s admin:admin123
 # ref
 
 [^1]:[【玩转腾讯云】使用轻量应用服务器和calibre-web搭建个人在线图书馆 - 腾讯云开发者社区-腾讯云 (tencent.com)](https://cloud.tencent.com/developer/article/1814658);
+
 [^2]:[linuxserver/calibre-web - Docker Image | Docker Hub](https://hub.docker.com/r/linuxserver/calibre-web);
 
 [^3]:[linuxserver/calibre-web - LinuxServer.io](https://docs.linuxserver.io/images/docker-calibre-web);
 
 [^4]:[如何重置密码 ·问题 #750 ·janeczku/calibre-web (github.com)](https://github.com/janeczku/calibre-web/issues/750#issuecomment-950041019);
+[^5]:[Install Docker Engine on Ubuntu | Docker Documentation](https://docs.docker.com/engine/install/ubuntu/);

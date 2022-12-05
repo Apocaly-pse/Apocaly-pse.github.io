@@ -165,25 +165,6 @@ networks:
 sudo docker-compose up -d
 ```
 
-### 加上Redis缓存
-
-```bash
-vi /opt/nextcloud/www/config/config.php
-```
-
-到文件倒数第二行, `);`之前, 然后加上:
-
-```php
-  'memcache.local' => '\OC\Memcache\Redis',
-  'memcache.distributed' => '\OC\Memcache\Redis',
-  'memcache.locking' => '\OC\Memcache\Redis',
-  'redis' => array(
-    'host' => 'redis',
-    'port' => 6379,
-    'password' => ''
-  ),
-```
-
 
 
 ## web端
@@ -201,6 +182,27 @@ nextcloud
 nextcloud
 nextcloud
 db
+```
+
+## Redis缓存
+
+直接使用的话速度比较慢, 这时候可以加上Redis缓存提高速度.
+
+```bash
+vi /opt/nextcloud/www/config/config.php
+```
+
+到文件倒数第二行, `);`之前, 然后加上:
+
+```php
+  'memcache.local' => '\OC\Memcache\Redis',
+  'memcache.distributed' => '\OC\Memcache\Redis',
+  'memcache.locking' => '\OC\Memcache\Redis',
+  'redis' => array(
+    'host' => 'redis',
+    'port' => 6379,
+    'password' => ''
+  ),
 ```
 
 

@@ -186,36 +186,69 @@ mongo -u root -p abc123 --authenticationDatabase leanote
 
 ## 配置守护进程
 
-因为在退出终端会话之后进程资源会被回收, 我们将不能通过公网IP访问云笔记, 那么就需要创建一个守护进程(daemon), 在关闭终端之后还能访问该服务, 下面用了[^1]的方法. 在Linux上创建守护进程的方法还有很多, 大家可以自行学习. 
+因为在退出终端会话之后进程资源会被回收, 我们将不能通过公网IP访问云笔记, 那么就需要创建一个守护进程(daemon), 在关闭终端之后还能访问该服务, 下面用`systemd`方法来完成守护进程的创建.
 
 ```bash
-# 在自启动目录中创建脚本
-sudo vi /etc/init.d/leanote.sh
+chmod +x /opt/leanote/bin/run.sh
+vi /lib/systemd/system/leanote.service
 ```
 
-写入如下内容:
+写入:
 
 ```bash
-#!/bin/bash
-bash /opt/leanote/bin/run.sh
+[Unit]
+Description=Leanote
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/leanote
+ExecStart=/opt/leanote/bin/run.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
 ```
 
-然后设置执行权限:
+最后:
 
 ```bash
-sudo chmod 755 /etc/init.d/leanote.sh
+systemctl daemon-reload 
+systemctl start leanote.service 
+systemctl enable leanote.service
 ```
 
-最后设置开机启动项:
+得到:
 
 ```bash
-sudo update-rc.d leanote.sh defaults
+Created symlink /etc/systemd/system/multi-user.target.wants/leanote.service → /lib/systemd/system/leanote.service.
 ```
+
+然后查看状态:
+
+```bash
+systemctl status leanote.service 
+```
+
+```bash
+● leanote.service - Leanote
+     Loaded: loaded (/lib/systemd/system/leanote.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sun 2022-11-27 15:47:10 CST; 22s ago
+   Main PID: 2434 (run.sh)
+      Tasks: 7 (limit: 4431)
+     Memory: 8.3M
+     CGroup: /system.slice/leanote.service
+             ├─2434 /bin/sh /opt/leanote/bin/run.sh
+             └─2440 /opt/leanote/bin/leanote-linux-amd64 -importPath github.com/leanote/leanote
+```
+
+
 
 查看一下执行情况:
 
 ```bash
-$ ps aux |grep leanote
+ps aux |grep leanote
 root       33069  0.0  0.0   9572  3256 ?        Ss   10:32   0:00 /usr/bin/bash /opt/leanote/bin/run.sh
 root       33083  0.0  0.4  27528 18876 ?        Sl   10:32   0:05 /opt/leanote/bin/leanote-linux-amd64 -importPath github.com/leanote/leanote
 root       37336  0.0  0.0   9032   656 pts/1    S+   20:01   0:00 grep --color=auto leanote
