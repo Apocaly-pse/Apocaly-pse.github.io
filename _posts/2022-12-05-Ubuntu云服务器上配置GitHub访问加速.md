@@ -84,7 +84,27 @@ chmod +x start_clash.sh
 git config --global http.proxy 'http://127.0.0.1:7890'
 ```
 
-这样就能愉快走代理加速GitHub了.
+这样就能愉快走代理加速GitHub了. 
+
+# 更新
+
+发现LinuxBrew中经常会出现:
+```bash
+ Failed to connect to 127.0.0.1 port 7890 after 0 ms: Couldn't connect to server
+```
+
+但是我已经关掉🪜并且`unset ALL_PROXY`了呀, 后来发现问题出在`git`了, 需要注释掉:
+
+```bash
+vi ~/.gitconfig
+# 注释
+; [http]
+;     proxy = http://127.0.0.1:7890
+```
+
+或者说, 别配置全局的git代理, 否则🪜需要一直挂着. 
+
+建议还是用bash环境变量方式设置代理. 
 
 # ref
 

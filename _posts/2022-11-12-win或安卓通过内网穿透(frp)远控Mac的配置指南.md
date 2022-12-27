@@ -6,7 +6,19 @@ tags: MacOS Linux Server
 
 前几天写了写通过mac远控Windows的一些方法, 下面来看看如何通过frp内网穿透的方法远控mac端, 这里给出通过安卓远控和Windows远控mac两种方式, 加上一些之前内容的补充, 包括一种新的方法给出Windows和服务器端部署开机启动守护进程的方法(Linux通过systemctl, Windows通过开机启动项), 主要参考了[^1].
 
-# 服务器的开机启动守护进程配置
+# 服务器
+
+## 开端口
+
+```bash
+addtcp 5900
+addtcp 5902
+reufw
+```
+
+对应管理界面开一下. 
+
+## 开机启动守护进程配置
 
 首先是创建一个文件` vi /lib/systemd/system/frps.service`, 编辑以下内容:
 
@@ -85,7 +97,13 @@ brew install frpc
 
 ## 配置开机启动项
 
-需要编辑一下`.plist`文件, 其实就是一个xml文件(不知道为什么要用这么反人类的配置)
+这里介绍一种新方法, 直接通过`brew services start frpc`即可. 服务管理比较方便, 至于下面的方法仅供参考. 
+
+---
+
+
+
+编辑一下`.plist`文件, 其实就是一个xml文件(不知道为什么要用这么反人类的配置)
 
 编辑一下文件`vim ~/Library/LaunchAgents/frpc.plist`:
 
@@ -126,7 +144,7 @@ log_file = /opt/homebrew/etc/frp/frpc.log
 type = tcp
 local_ip = 127.0.0.1
 local_port = 5900
-remote_port = 5900
+remote_port = 5902
 use_encryption = true
 use_compression = true
 
