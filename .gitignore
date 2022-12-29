@@ -3,7 +3,7 @@
 *.diff
 *.patch
 *.bak
-.DS_Store
+/**/.DS_Store
 *.swp
 *.swo
 *.log
@@ -17,7 +17,7 @@ node_modules/
 /.bundle/
 /vendor/bundle
 *.gem
-.idea/
+.idea/*
 
 yarn.lock
 package-lock.json

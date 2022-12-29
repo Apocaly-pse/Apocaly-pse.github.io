@@ -101,12 +101,14 @@ vim.cmd([[
 但是这不是一个很`lua`的写法, 下面我用lua以及nvim提供的API函数重写了上面的快捷配置函数:
 
 ```lua
+{% raw %}
 function vim.fn.ExecuteMacroOverVisualRange()
     vim.api.nvim_echo({{"@" .. vim.fn.getcmdline()}},false,{})
     vim.fn.execute(":'<,'>normal @" .. vim.fn.nr2char(vim.fn.getchar()))
 end
 
 ["x|@"] = map_cu("lua vim.fn.ExecuteMacroOverVisualRange()"),
+{% endraw %}
 ```
 
 参考[^2].

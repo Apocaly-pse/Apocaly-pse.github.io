@@ -261,7 +261,7 @@ root       37336  0.0  0.0   9032   656 pts/1    S+   20:01   0:00 grep --color=
 ```bash
 vi /opt/leanote/app/views/home/index.html
 # 注释掉下面一行
-!<-- <a class="btn btn-default btn-primary" href="/register">{{msg . "register"}}</a> -->
+!<-- <a class="btn btn-default btn-primary" href="/register">{% raw  %}{{msg . "register"}}{% endraw  %}</a> -->
 ```
 
 然后:
@@ -270,11 +270,13 @@ vi /opt/leanote/app/views/home/index.html
 vi /opt/leanote/app/views/home/login.html
 # 注释
 <!--
+{% raw  %}
 <p class="text-muted text-center"><small>{{msg . "hasAcount"}}</small></p>
 {{if .openRegister}}
          <a href="/register" class="btn btn-default btn-block">{{msg . "register"}}</a>
          {{msg . "or"}}
  {{end}}
+ {% endraw  %}
  -->
 
 ```

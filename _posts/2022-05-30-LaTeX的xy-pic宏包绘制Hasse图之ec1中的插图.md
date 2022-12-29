@@ -15,6 +15,7 @@ tags: LaTeX xy-pic
 部分代码如下:
 
 ```latex
+{% raw  %}
 \documentclass[border=3pt]{standalone}
 % \input xypic
 \usepackage[all,pdf]{xy}
@@ -30,11 +31,13 @@ tags: LaTeX xy-pic
             "I";"C"**{}  **@{-}}
         \end{xy}
 \end{document}
+{% endraw  %}
 ```
 
 
 
 ```latex
+{% raw  %}
 \documentclass[border=3pt]{standalone}
 % \input xypic
 \usepackage[all,pdf]{xy}
@@ -46,6 +49,7 @@ tags: LaTeX xy-pic
 \begin{document}
     \xyy{*=0{\B}\al[d]\al[dr]&*=0{\B}\al[d]\\*=0{\B}&*=0{\B}}
 \end{document}
+{% endraw  %}
 ```
 
 其他代码我放在[latexstudio](https://www.latexstudio.net/index/details/index/ids/2691)了. 

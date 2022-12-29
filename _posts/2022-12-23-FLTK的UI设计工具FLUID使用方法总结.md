@@ -438,7 +438,7 @@ echo "done!"
 ```bash
 CXX      = $(shell fltk-config --cxx)
 DEBUG    = -g
-CXXFLAGS = $(shell fltk-config --use-gl --use-images --cxxflags ) -I. -framework Cocoa
+CXXFLAGS = $(shell fltk-config --use-gl --use-images --cxxflags ) -I.
 LDFLAGS  = $(shell fltk-config --use-gl --use-images --ldflags )
 LDSTATIC = $(shell fltk-config --use-gl --use-images --ldstaticflags )
 LINK     = $(CXX)
@@ -471,29 +471,36 @@ endef
 
 .SUFFIXES: .o .cxx
 compile: $(SRCS)
-	$(CXX) $(CXXFLAGS) $(DEBUG) -c $^
+	@echo "compiling..."
+	@$(CXX) $(CXXFLAGS) $(DEBUG) -c $^
 
-all: compile link clean_app package_app run
+all: compile link run
 
-run: $(TARGET)
+bundle_app: clean_app package_app
+
+run: compile link $(TARGET)
 	./$(TARGET)
 
 package_app: compile link
-	mkdir -p $(APP_NAME).app/Contents/{MacOS,Resources}
-	echo '$(info_plist)' > "$(APP_NAME).app/Contents/Info.plist"
-	sed -e "s/APP_NAME/$(APP_NAME)/g" -i "" "$(APP_NAME).app/Contents/Info.plist"
-	cp $(TARGET) "$(APP_NAME).app/Contents/MacOS/$(APP_NAME)"
+	@echo "bundling..."
+	@mkdir -p $(APP_NAME).app/Contents/{MacOS,Resources}
+	@echo '$(info_plist)' > "$(APP_NAME).app/Contents/Info.plist"
+	@sed -e "s/APP_NAME/$(APP_NAME)/g" -i "" "$(APP_NAME).app/Contents/Info.plist"
+	@cp $(TARGET) "$(APP_NAME).app/Contents/MacOS/$(APP_NAME)"
 #	cp -R "$(FRAMEWORK_PATH)/SDL2.framework" "$(APP_NAME).app/Contents/Resources/"
 
 link: $(OBJS)
-	$(LINK) -o $(TARGET) $(OBJS) $(LDSTATIC)
+	@echo "linking..."
+	@$(LINK) -o $(TARGET) $(OBJS) $(LDSTATIC)
 
 clean: clean_app
-	rm -f *.o 2> /dev/null
-	rm -f $(TARGET) 2> /dev/null
+	@echo "Delete *.o $(TARGET)..."
+	@rm -f *.o 2> /dev/null
+	@rm -f $(TARGET) 2> /dev/null
 
 clean_app:
-	rm -rf $(APP_NAME).app
+	@echo "Delete $(APP_NAME).app..."
+	@rm -rf $(APP_NAME).app
 
 ```
 
@@ -505,7 +512,10 @@ clean_app:
 
 # 几点注意
 
-1.   
+1.   Makefile缩进需要用制表符, 如果要用空格需要在开头加上`.RECIPEPREFIX := $(.RECIPEPREFIX)<space>`, 其中`<space>`是一个空格.
+1.   FLUID界面也会被`esc`关闭, 注意保存, 可以通过快捷键⌘+S保存, 然后⌘+⇧+C生成头文件和源码. 
+1.   控件通过拖放完成布局, 需要调整部分控件的范围与`step`, 例如roller和slider. 
+1.   布局应该和回调函数分离, 便于维护, 后续会写相关文章. 
 
 # ref
 
