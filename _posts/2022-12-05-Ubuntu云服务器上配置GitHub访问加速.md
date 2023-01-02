@@ -1,5 +1,5 @@
 ---
-tags: Clash Ubuntu Tips
+tags: Clash Ubuntu Server
 ---
 
 # 写在前面

@@ -1,9 +1,8 @@
-# 简介
+# Intro
 
-这是我的个人博客, 由Jekyll生成.
+My GitHub Pages Blog powered by Jekyll.
 
 
+# About me
 
-# 更多信息
-
-我来自dlut, 主修Combinatorics.
+I'm Zorch, from DUT, Major in Combinatorics.
