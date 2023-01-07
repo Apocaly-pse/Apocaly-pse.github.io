@@ -1,5 +1,5 @@
 ---
-tags: Sublime C/C++ Tips
+tags: Sublime C++ Tips
 ---
 
 # 写在前面

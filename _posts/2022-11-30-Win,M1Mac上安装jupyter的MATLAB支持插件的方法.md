@@ -1,5 +1,5 @@
 ---
-tags: MATLAB Win Mac Tips
+tags: MATLAB Windows MacOS Tips
 ---
 
 # 写在前面
