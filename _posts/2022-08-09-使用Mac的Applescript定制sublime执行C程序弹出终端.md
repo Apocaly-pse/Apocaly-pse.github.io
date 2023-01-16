@@ -147,5 +147,6 @@ paul
 [^3]:[iterm_cmd.sh (github.com)](https://gist.github.com/LeoUfimtsev/82e7e827b6bfb1000f422a98f2008cc3);
 [^4]:[How do I execute a command in an iTerm window from the command line? - Stack Overflow](https://stackoverflow.com/questions/32675804/how-do-i-execute-a-command-in-an-iterm-window-from-the-command-line);
 [^5]:[Scripting - Documentation - iTerm2 - macOS Terminal Replacement](https://iterm2.com/documentation-scripting.html);
+
 [^6]:[Build Systems — Sublime Text Unofficial Documentation (sublime-text-unofficial-documentation.readthedocs.io)](https://sublime-text-unofficial-documentation.readthedocs.io/en/sublime-text-2/reference/build_systems.html);
 [^7]:[bash - zsh: read:-p: no coprocess error while using read command with -p flag - Ask Ubuntu](https://askubuntu.com/questions/1246576/zsh-read-p-no-coprocess-error-while-using-read-command-with-p-flag);

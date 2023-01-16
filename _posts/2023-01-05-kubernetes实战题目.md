@@ -1,3 +1,9 @@
+---
+tags: Docker K8S
+---
+
+
+
 1.   容器的基本实现技术有哪些？ namespace, cgroup, chroot
 
 2.   从镜像启动容器的命令: docker run

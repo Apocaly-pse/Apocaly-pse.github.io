@@ -1,5 +1,5 @@
 ---
-tags: C++ 
+tags: C++ STL
 ---
 
 # 坑
@@ -41,6 +41,8 @@ m1.count(4)=1
 后来拜读了*effective STL*一书, 才算是理解了为什么无序列表会是这样.
 
 >   参考: 第24条, 当效率至关重要时, 请在`map::operator[]`与`map::insert`之间谨慎做出选择.
+>
+>   当然, 也适用于`unordered_map`. 
 
 ## 用于更新元素`operator[]`
 
