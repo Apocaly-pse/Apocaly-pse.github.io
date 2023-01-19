@@ -1,14 +1,20 @@
 /* start custom scss snippet */
 
+@font-face {
+  font-family: "JetBrainsMono Nerd Font Mono";
+  src: local('JetBrainsMono Nerd Font Mono'), url("/assets/fonts/JetBrains Mono Regular Nerd Font Complete Mono.ttf") format("ttf");
+}
 
-.page__main {
-  @font-face {
-    font-family: "JetBrainsMono Nerd Font Mono";
-    src: local('JetBrainsMono Nerd Font Mono'), url("/assets/JetBrains Mono Regular Nerd Font Complete Mono.ttf") format("ttf");
-  }
-
-  /* 更改正文字体/code 字体 */
+body {
+  /* 更改正文字体 */
   font-family: 'JetBrainsMono Nerd Font Mono', Times, Menlo, Monaco, Consolas, Andale Mono, lucida console, Courier New, monospace;
+}
+
+code {
+  /* 更改code字体 */
+  font-family: 'JetBrainsMono Nerd Font Mono', Times, Menlo, Monaco, Consolas, Andale Mono, lucida console, Courier New, monospace;
+  font-size: 1.1rem;
+  font-size-xs: .85rem;
 }
 
 /* end custom scss snippet */
