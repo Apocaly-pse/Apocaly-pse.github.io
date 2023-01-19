@@ -130,4 +130,3 @@ end
 
 [^1]:[dotfiles/vimrc at master · nelstrom/dotfiles (github.com)](https://github.com/nelstrom/dotfiles/blob/master/vimrc#L172);
 [^2]:[ayamir/nvimdots: A well configured and structured Neovim. (github.com)](https://github.com/ayamir/nvimdots);
-[^3]:

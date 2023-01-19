@@ -1,5 +1,5 @@
 ---
-tags: emacs debug
+tags: Emacs debug
 ---
 
 
