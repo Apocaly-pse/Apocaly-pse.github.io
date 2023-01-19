@@ -15,7 +15,7 @@ Error Text.
 {:.error}
 ```
 
-会被渲染成:
+会被Jekyll渲染成:
 
 Success Text.
 {:.success}

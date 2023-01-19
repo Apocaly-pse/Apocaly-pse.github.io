@@ -1,5 +1,5 @@
 ---
-tags: Python LeetCode DSA
+tags: Python BinaryTree DSA C++
 ---
 
 
@@ -195,6 +195,60 @@ if __name__ == "__main__":
             / \
             4 5
 ```
+
+
+
+# C++版
+
+```cpp
+void BinaryTree::print_tree() {
+    queue<TreeNode*> q;
+    q.push(root);
+    int m = 0;
+    while (!q.empty()) {
+        for (int i = 0; i < q.size(); i++) {
+            auto cur = q.front();
+            q.pop();
+            if (cur->left) q.push(cur->left);
+            if (cur->right) q.push(cur->right);
+        }
+        m++;
+    }
+    int n = (1 << m) - 1;
+    vector<vector<string>> ans(m, vector<string>(n, " "));
+    vector<vector<string>> branch(m, vector<string>(n, " "));
+    queue<tuple<int, int, TreeNode*, string>> bq;
+    bq.push({0, (n - 1) / 2, root, ""s});
+    while (!bq.empty()) {
+        for (int i = 0; i < bq.size(); i++) {
+            auto& [r, c, cur, slash] = bq.front();
+            bq.pop();
+            if (!cur->val) continue;
+            ans[r][c] = to_string(cur->val);
+            if (r == m - 1) {
+                branch[r][c] = slash;
+            } else {
+                if (slash == "/"s)
+                    branch[r][c + 1] = slash;
+                else
+                    branch[r][c - 1] = slash;
+            }
+            if (cur->left)
+                bq.push({r + 1, c - pow(2, m - r - 2), cur->left, "/"s});
+            if (cur->right)
+                bq.push({r + 1, c + pow(2, m - r - 2), cur->right, "\\"s});
+        }
+    }
+    for (int i = 0; i < m; i++) {
+        for (auto& s : branch[i]) cout << s;
+        cout << endl;
+        for (auto& s : ans[i]) cout << s;
+        cout << endl;
+    }
+}
+```
+
+
 
 
 
