@@ -123,21 +123,21 @@ unset DBUS_SESSION_BUS_ADDRESS
 exec startxfce4 
 ```
 
-改(增加)`~/.vnc/config`文件:
+改(增加)`~/.vnc/vnc.conf`文件:
 
 >   (用配置文件的好处就是不用每次都更改systemd的配置, systemd还要reload比较麻烦)
 
 ```bash
-vi ~/.vnc/config
+vi ~/.vnc/vnc.conf
 #加上:(这里你可以改成自己桌面的分辨率)
-localhost=no
-depth=24
-geometry=1900x1200
-dpi=96
+$localhost = "no";
+$geometry = "1900x1200";
+$depth = "24";
 
+1;
 ```
 
-这上面的选项不知道的话可以通过`vncserver -h`查看. 
+这上面的选项不知道的话可以通过`vncserver -h`或者`cat /etc/vnc.conf`查看. 
 
 
 

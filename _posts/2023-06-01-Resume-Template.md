@@ -17,6 +17,7 @@
 
 * 熟练使用C/C++、Python，掌握Lua、Shell、Makefile、Cmake，了解Java、Golang等编程语言
 * 掌握基础数据结构和主流算法的基本原理
+* 熟练使用C系统调用编写网络服务器程序
 * 数据库MySQL
 
 ## 项目经历
@@ -34,16 +35,14 @@
     * demo演示地址，github地址 
 
 ## 获奖经历
-* XXX 优秀新人
-* XXX 学生社团优秀干部
-* 竞赛 XXX 奖
+* 带队获得2021年"华为杯"第十八届中国研究生数学建模竞赛全国三等奖
+* 
 
 ## 个人账号 
 * [zorchp-CSDN](https://zorchp.blog.csdn.net/) (附加自己博客特色，写了哪些技术文章)
 * [Apocaly-pse-GitHub](https://github.com/APocaly-pse/) (附加自己github特色，突出的项目)
 
 ## 其他信息 
-* 喜欢钻研技术 等等
+* 喜欢钻研计算机前沿技术 等等
 * 性格开朗，喜欢户外运动，骑行等等 
-
 
