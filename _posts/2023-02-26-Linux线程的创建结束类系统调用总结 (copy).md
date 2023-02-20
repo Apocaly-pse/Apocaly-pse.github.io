@@ -1,0 +1,272 @@
+---
+tags: Linux OS Syscall C
+---
+
+# 写在前面
+
+总结一下Linux系统的线程创建/终止/等待等系统调用, 参考:
+
+1.   Linux/Unix系统编程手册.
+
+下面主要给出例子, 关于函数原型可以参考书中或者`man 7 pthreads`. 
+
+>   测试环境: Ubuntu 20.04 x86_64
+>
+>   gcc-9
+
+# 新线程的创建: pthread_create()
+
+```c
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+static void* func(void* arg) {
+    char* s = (char*)arg;
+    printf("%s", s);
+    return (void*)strlen(s);
+}
+
+
+int main(int argc, char* argv[]) {
+    pthread_t t1;
+    void* res;
+    int s;
+    s = pthread_create(&t1, NULL, func, "hello pthread\n");
+    if (s) fprintf(stderr, "pthread_create");
+    
+    printf("msg from main():\n");
+    
+    s = pthread_join(t1, &res);
+    if (s) fprintf(stderr, "pthread_join");
+
+    printf("thread returned: %ld\n", (long)res);
+    /* msg from main(): */
+    /* hello pthread */
+    /* thread returned: 14 */
+
+    return 0;
+}
+```
+
+
+
+
+
+# 线程分离: 
+
+
+
+
+
+# 线程同步/互斥量
+
+来看这样的一个例子:
+
+```c
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+static int glob = 0;
+
+static void* func(void* arg) {
+    int loops = *((int*)arg);
+    int loc, j;
+    // 并非原子操作
+    for (j = 0; j < loops; ++j) {
+        loc = glob;
+        loc++;
+        glob = loc;
+        // ++glob; // maybe useful
+    }
+    return NULL;
+}
+
+
+int main(int argc, char* argv[]) {
+    pthread_t t1, t2;
+    int loops, s;
+    loops = 100000;
+    s = pthread_create(&t1, NULL, func, &loops);
+    if (s) fprintf(stderr, "pthread_create");
+    s = pthread_create(&t2, NULL, func, &loops);
+    if (s) fprintf(stderr, "pthread_create");
+    s = pthread_join(t1, NULL);
+    if (s) fprintf(stderr, "pthread_join");
+    s = pthread_join(t2, NULL);
+    if (s) fprintf(stderr, "pthread_join");
+
+    printf("glob = %d\n", glob);
+    // loops = 100000
+    /* glob = 200000 */
+
+    // loops = 10000000
+    /* glob = 12894835 */
+
+    return 0;
+}
+
+```
+
+在数据量小的时候, 没有问题; 但是当操作次数逐渐增加, 会出现不确定行为, 这是因为操作系统内核CPU调度的不确定性. 
+
+在一些系统上, 使用单独的一条语句`++glob`代替循环中的`三条语句`可能会解决这个问题, 但是一般来说还是应该使用**互斥量**(mutex, mutual exclusion)来解决这个问题. 
+
+
+
+## 互斥量
+
+通过互斥量(我更喜欢叫互斥锁)的方法可以解决上面的问题. 
+
+### 基本用法
+
+
+
+```c
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+static int glob = 0;
+// init mutex lock
+static pthread_mutex_t mtx = PTHREAD_MUTEX_INITIALIZER;
+
+static void* func(void* arg) {
+    int loops = *((int*)arg);
+    int loc, j, s;
+    /* s = pthread_mutex_lock(&mtx); */
+    /* if (s) fprintf(stderr, "pthread_mutex_lock"); */
+    for (j = 0; j < loops; ++j) {
+        s = pthread_mutex_lock(&mtx);
+        if (s) fprintf(stderr, "pthread_mutex_lock");
+        loc = glob;
+        ++loc;
+        glob = loc;
+        s = pthread_mutex_unlock(&mtx);
+        if (s) fprintf(stderr, "pthread_mutex_unlock");
+    }
+    /* s = pthread_mutex_unlock(&mtx); */
+    /* if (s) fprintf(stderr, "pthread_mutex_unlock"); */
+    return NULL;
+}
+
+
+int main(int argc, char* argv[]) {
+    pthread_t t1, t2;
+    int loops, s;
+    loops = 100000000;
+    s = pthread_create(&t1, NULL, func, &loops);
+    if (s) fprintf(stderr, "pthread_create");
+    s = pthread_create(&t2, NULL, func, &loops);
+    if (s) fprintf(stderr, "pthread_create");
+    s = pthread_join(t1, NULL);
+    if (s) fprintf(stderr, "pthread_join");
+    s = pthread_join(t2, NULL);
+    if (s) fprintf(stderr, "pthread_join");
+
+    printf("glob = %d\n", glob);
+    // after locked:
+    /* glob = 20000000 */
+
+    return 0;
+}
+// Lock outside the for loop
+/* glob = 200000000 */
+/*  */
+/* real    0m0.896s */
+/* user    0m0.889s */
+/* sys     0m0.000s */
+
+// inside:
+/* glob = 200000000 */
+/*  */
+/* real    0m18.602s */
+/* user    0m22.255s */
+/* sys     0m13.218s */
+```
+
+可以看出, 两种加锁方式的耗时区别相当大, 所以一定要在合理位置加锁, 提高资源使用率. 
+
+
+
+### 死锁
+
+```c
+#include <pthread.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// init mutex lock
+pthread_mutex_t mtx1 = PTHREAD_MUTEX_INITIALIZER,
+                mtx2 = PTHREAD_MUTEX_INITIALIZER;
+
+static void* func1(void* arg) {
+    pthread_mutex_lock(&mtx1);
+    char* s = (char*)arg;
+    printf("%s", s);
+    pthread_mutex_lock(&mtx2);
+    return (void*)strlen(s);
+}
+static void* func2(void* arg) {
+    pthread_mutex_lock(&mtx2);
+    char* s = (char*)arg;
+    printf("%s", s);
+    pthread_mutex_lock(&mtx1);
+
+    return (void*)strlen(s);
+}
+
+int main(int argc, char* argv[]) {
+    pthread_t t1, t2;
+    void* res;
+    int s;
+    s = pthread_create(&t1, NULL, func1, "hello pthread1\n");
+    if (s) fprintf(stderr, "pthread_create");
+
+    s = pthread_create(&t2, NULL, func2, "hello pthread2\n");
+    if (s) fprintf(stderr, "pthread_create");
+
+    printf("msg from main():\n");
+
+    s = pthread_join(t1, &res);
+    if (s) fprintf(stderr, "pthread_join");
+
+    s = pthread_join(t2, &res);
+    if (s) fprintf(stderr, "pthread_join");
+
+    printf("thread returned: %ld\n", (long)res);
+
+    return 0;
+}
+```
+
+
+
+
+
+
+
+### 动态初始化互斥量
+
+```c
+```
+
+
+
+
+
+## 条件变量
+
+为了解决互斥量的一些缺点而产生, 看下面的例子:
+
+>   由若干线程生成一些产品单元供主线程消费(生产者/消费者模型), 使用一个由互斥量保护的变量`avail`代表待消费产品的数量. 
+
+```c
+
+```
+

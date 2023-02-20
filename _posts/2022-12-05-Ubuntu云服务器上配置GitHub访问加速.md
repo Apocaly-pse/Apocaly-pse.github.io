@@ -19,7 +19,7 @@ git config --global user.name "test"
 git config --global user.email xxx@qq.com
 ```
 
-然后还需要在GitHub导入公钥, 公钥的生成需要通过`ssh-keygen`, 目录在`~/,ssh/id_rsa.pub`, 里面的内容放在GitHub.com你的主页settings的`ssh和gpg`部分, `new ssh`里面. 
+然后还需要在GitHub导入公钥, 公钥的生成需要通过`ssh-keygen`, 目录在`~/.ssh/id_rsa.pub`, 里面的内容放在GitHub.com你的主页settings的`ssh和gpg`部分, `new ssh`里面. 
 
 然后配置一下`~/.ssh/config`, 加上:
 
