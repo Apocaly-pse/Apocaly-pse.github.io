@@ -119,6 +119,75 @@ ffmpeg -f concat -safe 0 -i file.txt -c copy a.mp4
 
 如果下载的可执行文件, 还需要使用`./`前缀来执行, 如果提示需要移至废纸篓, 那就去`安全性与隐私`那里点击仍要打开. 
 
+可以写在一个Python脚本中:
+
+```python
+import requests, os, re, time
+
+
+def crawl(url):
+    r = requests.get(url).content
+    return r
+
+
+base_url = "https://dtliving-sz.dingtalk.com/live_hp/"
+
+
+def get_url():
+    url_list = []
+    with open("aa.m3u8", "r") as f:
+        s = f.readlines()
+    for i in s:
+        if re.match(r".*?ts.*?", i):
+            url_list.append(base_url + i)
+
+    return url_list
+
+
+def output_url():
+    base_url = "https://dtliving-sz.dingtalk.com/live_hp/"
+
+    url_lst = get_url()
+    with open("urls.txt", "w+") as f:
+        for i, itm in enumerate(url_lst):
+            url = base_url + itm
+            print(i, url)
+            f.write(url)
+
+
+def download():
+    urls = get_url()
+    for i, url in enumerate(urls):
+        with open(f"{i+1}.ts", "wb") as f:
+            f.write(crawl(url[:-1]))
+        print(i, "ok")
+        # time.sleep(1)
+
+
+def parse_filename():
+    base_path = os.getcwd()
+    with open("file.txt", "w+") as f:
+        for i in range(1, 10):
+            path = f"file '{base_path}/{i}.ts'\n"
+            print(path)
+            f.write(path)
+
+
+def merge_ts(video_name):
+    cmd = f"./ffmpeg -f concat -safe 0 -i file.txt -c copy {video_name}.mp4"
+    os.system(cmd)
+
+
+if __name__ == "__main__":
+    download()
+    print("download success!")
+    print()
+    parse_filename()
+    merge_ts("a")
+    print("merge success!")
+    os.remove("file.txt")
+```
+
 
 
 # 结语
