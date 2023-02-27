@@ -92,11 +92,15 @@ cd build
 
 ## cmake
 
-参数指的是是否开启并行计算(mpi支持)
+参数`-D LAMMPS_MACHINE=mpi`指的是是否开启并行计算(mpi支持)
 
 ```bash
 cmake -D LAMMPS_MACHINE=mpi -D PKG_MANYBODY=on -D PKG_MOLECULE=on ../cmake
 ```
+
+>   `-D PKG_包名称=on`这个指的就是在编译安装LAMMPS时候需要的额外可选包, 更多信息可参考文档:
+>
+>   [8.6.4. Using LAMMPS on Windows 10 with WSL — LAMMPS documentation](https://docs.lammps.org/Build_extras.html#voronoi-package);
 
 这里可能会有个小问题, cmake会出现:
 
@@ -161,10 +165,10 @@ cd voro++-0.4.6
 ## 编译安装
 
 ```bash
-# 进入到lammps文件夹中ib/voronoi目录，更改Makefile.lammps:
-voronoi SYSINC = -I/usr/local/include/vorott
-voronoi 5Y5LIB = -lvoro++
-voronoi SY5PATH = -L/usr/local/lib
+# 进入到lammps文件夹中lib/voronoi目录，更改Makefile.lammps:
+voronoi SYSINC = -I/usr/local/include/voro++
+voronoi SYSLIB = -lvoro++
+voronoi SYSPATH = -L/usr/local/lib
 ```
 
 
@@ -176,4 +180,16 @@ voronoi SY5PATH = -L/usr/local/lib
 make yes-voronoi
 sudo make voro -j 4 #视个人情況编译
 ```
+
+
+
+# 后记
+
+后来发现, 采用cygwin在Windows上安装LAMMPS的话, 并不是最佳的方案, cygwin只是一个在LAMMPS上安装voro++补充包的一种方法, 并不能对LAMMPS的并行计算起到支持, 所以还是老老实实wsl. (毕竟是LAMMPS官方推荐的方法)
+
+对于这部分内容, 可以参考:
+
+[8.6.4. Using LAMMPS on Windows 10 with WSL — LAMMPS documentation](https://docs.lammps.org/Howto_wsl.html)
+
+然后, 就是熟悉的Ubuntu环节了. 
 
