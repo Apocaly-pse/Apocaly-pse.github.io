@@ -95,7 +95,7 @@ cd build
 参数`-D LAMMPS_MACHINE=mpi`指的是是否开启并行计算(mpi支持)
 
 ```bash
-cmake -D LAMMPS_MACHINE=mpi -D PKG_MANYBODY=on -D PKG_MOLECULE=on ../cmake
+cmake -D LAMMPS_MACHINE=mpi -D PKG_MANYBODY=on -D PKG_MOLECULE=on -D PKG_VORONOI=on ../cmake
 ```
 
 >   `-D PKG_包名称=on`这个指的就是在编译安装LAMMPS时候需要的额外可选包, 更多信息可参考文档:
@@ -163,6 +163,17 @@ cd voro++-0.4.6
 ```
 
 ## 编译安装
+
+```bash
+make
+sudo make install
+```
+
+
+
+
+
+## 重新编译LAMMPS
 
 ```bash
 # 进入到lammps文件夹中lib/voronoi目录，更改Makefile.lammps:
