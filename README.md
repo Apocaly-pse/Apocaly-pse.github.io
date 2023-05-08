@@ -1,8 +1,3 @@
-# Intro
+# REMOVED
 
-My GitHub Pages Blog powered by Jekyll.
-
-
-# About me
-
-I'm Zorch, from DUT, Major in Combinatorics.
+MY Blog is [HERE](https://zorchp.github.io) now.
